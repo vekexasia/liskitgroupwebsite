@@ -1,4 +1,10 @@
-[
+[   {
+        "title": "Responses updated",
+        "repository": "LiskHQ/lisk-docs",
+        "uri": "https://github.com/LiskHQ/lisk-docs/pull/23",
+        "date": "23 January 2017",
+        "authors": [ "liskit" ]
+    },
     {
         "title": "Update API responses",
         "repository": "LiskHQ/lisk-docs",
