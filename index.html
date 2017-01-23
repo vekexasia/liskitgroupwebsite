@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ligApp">
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lisk Italian Group</title>
+
+  	<!-- bower:css -->
+  	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  	<link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.css" />
+  	<link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css" />
+  	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+  	<!-- endbower -->
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  	<link rel="stylesheet" type="text/css" href="style/main.css">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+  </head>
+  <body>
+	<div class="container" ng-controller="indexController">
+		<div class="spacer-50"></div>
+		<h1 class="text-center">Lisk <strong>Italian</strong> Group</h1>
+		<div class="spacer-50"></div>
+		<h2><i class="fa fa-bullhorn title-icons-pipe" aria-hidden="true"></i> What or Who?</h2>
+		<div class="spacer-25"></div>
+		<p>
+			The <strong>LIG</strong> is composed by 8 Italian delegates working for the Lisk environment since March-April 2016 (after the end of Lisk ICO).<br>
+			Everyone is putting its own skills at disposal to improve Lisk everyday.<br><br>
+			Our <strong>goal</strong> is to fund projects related to Lisk like <strong>B-Apps</strong> (aka blockchain apps) or tools designed by us.<br>
+			We aim at reporting news and releases about  those projects to the community.<br><br>
+			With a multi-signed address we’re going to create an <strong>official fund</strong> named <strong>FULIG</strong> to support these projects.
+			Each month LIG members will be free to donate a percentage of their forged Lisk to the fund.
+		</p>
+		<div class="spacer-25"></div>
+		<hr>
+		<div class="spacer-25"></div>
+		<h2><i class="fa fa-coffee title-icons-pipe" aria-hidden="true"></i> Projects</h2>
+		<p>Project related to the <strong>Lisk ecosystem</strong> and developed by the <strong>LIG</strong> members.</p>
+		<div class="spacer-50"></div>
+		<div class="row">
+			<div class="col-md-3" ng-repeat="c in projects">
+				<div class="panel" ng-class="{ 'panel-success': c.stage == 'production', 'panel-warning': c.stage == 'development' }">
+					<div class="panel-heading">
+						<h3 class="panel-title">{{c.name}}</h3>
+					</div>
+					<div class="panel-body" style="height: 150px">
+						{{c.type}} - {{c.stage}}
+						<hr>
+						{{c.description}}
+					</div>
+					<div class="panel-footer">
+						<span ng-repeat="auth in c.authors">{{auth}}&nbsp;</span>
+						<br>
+						<i class="fa fa-github"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="spacer-25"></div>
+		<hr>
+		<div class="spacer-25"></div>
+		<h2><i class="fa fa-thumbs-o-up title-icons-pipe" aria-hidden="true"></i> Contributions</h2>
+		<p>Contributions and pull requests to external projects related to the <strong>Lisk ecosystem</strong> or to the <strong>Lisk core software</strong>.</p>
+		<div class="spacer-50"></div>
+		<table class="table">
+		<tr ng-repeat="c in contributions" style="font-size: 120%">
+			<td>
+				<span style="color: #6e5494;">
+					<i class="fa fa-code-fork"></i>
+					{{c.repository}}
+				</span>
+			</td>
+			<td>
+				{{c.title}}
+			</td>
+			<td>
+				{{c.date}}
+			</td>
+			<td>
+				<span ng-repeat="auth in c.authors">{{auth}}&nbsp;</span>
+			</td>
+			<td>
+				<a href="{{c.uri}}" target="_blank"><i class="fa fa-external-link"></i></a>
+			</td>
+		</tr>
+		</table>
+		<div class="spacer-25"></div>
+		<hr>
+		<div class="spacer-25"></div>
+		<h2><i class="fa fa-user-o title-icons-pipe" aria-hidden="true"></i> Members</h2>
+		<p>All the <strong>Lisk Italian members</strong> that are <strong>actively</strong> contribute to the ecosystem.</p>
+		<div class="spacer-50"></div>
+		<div class="row">
+			<div class="col-md-3" ng-repeat="m in members">
+				<div class="circle">
+					<img ng-src="img/{{m.img}}" class="img-responsive"/>
+				</div>
+				<p class="text-center margin-top-10">{{m.name}}</p>
+			</div>
+	</div>
+
+	<!-- bower:js -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+	<script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
+	<script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+	<!-- endbower -->
+	<script src="js/index.js"></script>
+	<script>
+		$.material.init ();
+	</script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+[
+    {
+        "name": "lisk-delegate-monitor",
+        "description": "Web platform for lisk delegates",
+        "type": "webservice",
+        "stage": "production",
+        "repository": "https://github.com/dakk/lisk-delegate-monitor",
+        "license": "MIT",
+        "authors": [ "dakk" ]
+    },
+    {
+        "name": "liskitbot",
+        "description": "Simple telegram bot for Lisk machine status (check JS branch) ",
+        "type": "bot",
+        "stage": "production",
+        "repository": "https://github.com/andreafspeziale/liskitbot",
+        "license": "MIT",
+        "authors": [ "liskit" ]
+    },
+    {
+        "name": "liskapi",
+        "description": "A smart wrapper for Lisk node APIs",
+        "type": "library",
+        "stage": "development",
+        "repository": "https://github.com/dakk/liskapi",
+        "license": "MIT",
+        "authors": [ "dakk", "liskit" ]
+    },
+    {
+        "name": "lisk-js-autorebuilder",
+        "description": "Lisk node anti-fork made in Javascript",
+        "type": "script",
+        "stage": "production",
+        "repository": "https://github.com/andreafspeziale/lisk-js-autorebuilder",
+        "license": "MIT",
+        "authors": [ "liskit" ]
+    },
+    {
+        "name": "wallisk",
+        "description": "Not just a simple LISK blockchain height checker ",
+        "type": "software",
+        "stage": "development",
+        "repository": "https://github.com/corsaro1/wallisk",
+        "license": "MIT",
+        "authors": [ "corsaro" ]
+    },
+    {
+        "name": "lisk-dice",
+        "description": "Dice game for Lisk, Shift and Ark ",
+        "type": "webservice",
+        "stage": "development",
+        "repository": "https://github.com/dakk/lisk-dice",
+        "license": "MIT",
+        "authors": [ "dakk" ]
+    },
+    {
+        "name": "lisk-dump-detector",
+        "description": "Detect delegates who send money to know exchanges addresses",
+        "type": "webservice",
+        "stage": "development",
+        "repository": "Dice game for Lisk, Shift and Ark",
+        "license": "MIT",
+        "authors": [ "dakk" ]
+    },
+    {
+        "name": "termux-liskmonitor",
+        "description": "A termux script for monitoring Lisk delegate",
+        "type": "mobile",
+        "stage": "development",
+        "repository": "https://github.com/dakk/termux-liskmonitor",
+        "license": "MIT",
+        "authors": [ "dakk" ]
+    },
+    {
+        "name": "lisk-italian-group",
+        "description": "This website",
+        "type": "website",
+        "stage": "development",
+        "repository": "https://github.com/dakk/lisk-italian-group",
+        "license": "MIT",
+        "authors": [ "dakk", "liskit" ]
+    },
+    {
+        "name": "lisk-explorer",
+        "description": "Lisk network explorer",
+        "type": "script",
+        "stage": "production",
+        "repository": "https://github.com/andreafspeziale/lisk-explorer.git",
+        "license": "MIT",
+        "authors": [  "liskit" ]
+    },
+    {
+        "name": "liskit-dashboard",
+        "description": "Liskit voters dashboard",
+        "type": "website",
+        "stage": "production",
+        "repository": "https://github.com/andreafspeziale/liskit-dashboard.git",
+        "license": "MIT",
+        "authors": [  "liskit" ]
+    },
+    {
+        "name": "liskitbash",
+        "description": "Smart bash wrapper for Lisk installation and update",
+        "type": "script",
+        "stage": "development",
+        "repository": "https://github.com/andreafspeziale/liskitbash.git",
+        "license": "MIT",
+        "authors": [  "liskit" ]
+    },
+    {
+        "name": "lisk-ansible",
+        "description": "Virtual Lisk local node for development",
+        "type": "devops",
+        "stage": "production",
+        "repository": "https://github.com/andreafspeziale/lisk-ansible.git",
+        "license": "MIT",
+        "authors": [  "liskit" ]
+    }
+
+]

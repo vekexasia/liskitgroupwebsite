@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Update API responses",
+        "repository": "LiskHQ/lisk-docs",
+        "uri": "https://github.com/LiskHQ/lisk-docs/pull/22",
+        "date": "19 January 2017",
+        "authors": [ "liskit" ]
+    },
+    {
+        "title": "Response correction in APIs doc",
+        "repository": "LiskHQ/lisk-docs",
+        "uri": "https://github.com/LiskHQ/lisk-docs/pull/21",
+        "date": "18 January 2017",
+        "authors": [ "liskit" ]
+    },
+    {
+        "title": "Peers count API",
+        "repository": "LiskHQ/lisk",
+        "uri": "https://github.com/LiskHQ/lisk/pull/365",
+        "date": "3 January 2017",
+        "authors": [ "dakk" ]
+    },
+    {
+     	"title": "Forging statistics",
+        "repository": "LiskHQ/lisk-ui",
+        "uri": "https://github.com/LiskHQ/lisk-ui/pull/90",
+        "date": "21 December 2016",
+        "authors": [ "dakk" ]
+    },
+    {
+        "title": "Add delegate forging statistics",
+        "repository": "LiskHQ/lisk",
+        "uri": "https://github.com/LiskHQ/lisk/pull/343",
+        "date": "20 December 2016",
+        "authors": [ "dakk" ]
+    }
+]
