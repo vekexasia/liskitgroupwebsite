@@ -1,4 +1,11 @@
 [   {
+        "title": "Docs improvements",
+        "repository": "LiskHQ/lisk-docs",
+        "uri": "https://github.com/LiskHQ/lisk-docs/pull/24",
+        "date": "24 January 2017",
+        "authors": [ "liskit" ]
+    },
+    {
         "title": "Responses updated",
         "repository": "LiskHQ/lisk-docs",
         "uri": "https://github.com/LiskHQ/lisk-docs/pull/23",
