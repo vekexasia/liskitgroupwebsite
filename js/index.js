@@ -5,6 +5,14 @@ ligApp.controller('indexController', function indexController($scope, $http) {
     $scope.contributions = [];
     $scope.authors = {};
     $scope.events = [];
+    $scope.fulig = {
+        address: '13861531827625059307L',
+        balance: null
+    };
+
+    $http.get ('http://51.15.52.112:8000/api/accounts/getBalance?address=' + $scope.fulig.address).then (function (data) {
+        $scope.fulig.balance = parseInt (data.data.balance) / 100000000;
+    });
 
     $http.get ('data/projects.json').then (function (data) {
         $scope.projects = data.data;

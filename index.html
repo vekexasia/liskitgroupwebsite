@@ -34,9 +34,14 @@
 			Everyone is putting its own skills at disposal to improve Lisk everyday.<br><br>
 			Our <strong>goal</strong> is to fund projects related to Lisk like <strong>B-Apps</strong> (aka blockchain apps) or tools designed by us.<br>
 			We aim at reporting news and releases about  those projects to the community.<br><br>
-			With the multi-signed address <i>13861531827625059307L</i> we’re going to create an <strong>official fund</strong> named <strong>FULIG</strong> to support these projects.
-			Each month LIG members will be free to donate a percentage of their forged Lisk to the fund.
+			With the multi-signature address <a href="https://explorer.lisk.io/address/13861531827625059307L"><i>{{fulig.address}}</i></a> we’re going to create an <strong>official fund</strong> named <strong>FULIG</strong> to support these projects.
+			Each month LIG members (and all Liskers who want) will be free to donate a percentage of their forged Lisk to the fund.
 		</p>
+
+		<div align="center" style="font-size: 300%">
+			<i ng-if="fulig.balance == null" class="fa fa-spin fa-refresh"></i>
+			<span ng-if="fulig.balance != null">{{fulig.balance}} LSK</span>
+		</div>
 
 
 		<div class="spacer-25"></div>
