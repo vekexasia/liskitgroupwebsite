@@ -4,9 +4,14 @@ ligApp.controller('indexController', function indexController($scope, $http) {
     $scope.projects = [];
     $scope.contributions = [];
     $scope.authors = {};
+    $scope.events = [];
 
     $http.get ('data/projects.json').then (function (data) {
         $scope.projects = data.data;
+    });
+
+    $http.get ('data/events.json').then (function (data) {
+        $scope.events = data.data;
     });
 
     $http.get ('data/authors.json').then (function (data) {

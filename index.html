@@ -37,12 +37,44 @@
 			With the multi-signed address <i>13861531827625059307L</i> we’re going to create an <strong>official fund</strong> named <strong>FULIG</strong> to support these projects.
 			Each month LIG members will be free to donate a percentage of their forged Lisk to the fund.
 		</p>
+
+
+		<div class="spacer-25"></div>
+		<hr>
+		<div class="spacer-25"></div>
+		<h2><i class="fa fa-calendar title-icons-pipe" aria-hidden="true"></i> Events</h2>
+		<p>Events organized by us.</p>
+		<div class="spacer-25"></div>
+		<table class="table">
+		<tr ng-repeat="e in events" style="font-size: 120%">
+			<td>
+				<span style="color: #6e5494;">
+					<i class="fa fa-calendar-check-o"></i>
+					{{e.type}}
+				</span>
+			</td>
+			<td>
+				{{e.title}}
+			</td>
+			<td>
+				{{e.date}}
+			</td>
+			<td>
+				{{e.location}}
+			</td>
+			<td>
+				<a href="{{c.uri}}" target="_blank"><i class="fa fa-external-link"></i></a>
+			</td>
+		</tr>
+		</table>
+
+
 		<div class="spacer-25"></div>
 		<hr>
 		<div class="spacer-25"></div>
 		<h2><i class="fa fa-coffee title-icons-pipe" aria-hidden="true"></i> Projects</h2>
 		<p>Project related to the <strong>Lisk ecosystem</strong> and developed by the <strong>LIG</strong> members.</p>
-		<div class="spacer-50"></div>
+		<div class="spacer-25"></div>
 		<div class="row">
 			<div class="col-md-3" ng-repeat="c in projects">
 				<div class="panel" ng-class="{ 'panel-success': c.stage == 'production', 'panel-warning': c.stage == 'development' }">
@@ -62,12 +94,14 @@
 				</div>
 			</div>
 		</div>
+
+
 		<div class="spacer-25"></div>
 		<hr>
 		<div class="spacer-25"></div>
 		<h2><i class="fa fa-thumbs-o-up title-icons-pipe" aria-hidden="true"></i> Contributions</h2>
 		<p>Contributions and pull requests to external projects related to the <strong>Lisk ecosystem</strong> or to the <strong>Lisk core software</strong>.</p>
-		<div class="spacer-50"></div>
+		<div class="spacer-25"></div>
 		<table class="table">
 		<tr ng-repeat="c in contributions" style="font-size: 120%">
 			<td>
@@ -95,7 +129,7 @@
 		<div class="spacer-25"></div>
 		<h2><i class="fa fa-user-o title-icons-pipe" aria-hidden="true"></i> Members</h2>
 		<p>All the <strong>Lisk Italian members</strong> that are <strong>actively</strong> contribute to the ecosystem.</p>
-		<div class="spacer-50"></div>
+		<div class="spacer-25"></div>
 		<div class="row">
 			<div class="col-md-3" ng-repeat="m in members">
 				<div class="circle">
