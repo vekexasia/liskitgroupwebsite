@@ -47,25 +47,26 @@
 		<div class="spacer-25"></div>
 		<div class="row" ng-cloak>
 			<div class="col-md-4">
-				<p class="text-center">Income</p>
+				<p class="text-center"><strong>Income</strong></p>
 
-				<p ng-repeat="i in income">{{i.senderId}} <i class="fa fa-long-arrow-right"> </i> {{i.amount/100000000}} LSK</p>
-				<p class="small"><a href="https://explorer.liskwallet.net/address/13861531827625059307L" target="_blank">... view more</a></p>
-
+				<p ng-repeat="i in income" ng-if="i.amount/100000000 > 0"><a ng-href="https://explorer.lisk.io/tx/{{ i.id }}" target="_blank">{{ i.delegate || i.senderId }} <i class="fa fa-long-arrow-right"></i> {{ i.amount/100000000 }} LSK</a></p>
+				<p class="small"><a href="https://explorer.lisk.io/address/9485875898006061171L" target="_blank">... view more</a></p>
 			</div>
+
 			<div class="col-md-4">
-				<p class="text-center">Balance</p>
+				<p class="text-center"><strong>Balance</strong></p>
+
 				<p class="text-center">
 					<!--<i ng-if="fulig.balance == null" class="fa fa-spin fa-refresh"></i>-->
 					<span ng-if="fulig.balance != null">{{fulig.balance}} LSK</span>
 				</p>
 			</div>
+
 			<div class="col-md-4">
-				<p class="text-center">Outcome</p>
+				<p class="text-center"><strong>Outcome</strong></p>
 
-				<p ng-repeat="o in outcome" ng-if="o.amount/100000000 > 0">{{o.amount/100000000}} LSK <i class="fa fa-long-arrow-right"> </i>{{o.recipientId}}</p>
-				<p class="small"><a href="https://explorer.liskwallet.net/address/13861531827625059307L" target="_blank">... view more</a></p>
-
+				<p ng-repeat="o in outcome" ng-if="o.amount/100000000 > 0"><a ng-href="https://explorer.lisk.io/tx/{{ o.id }}" target="_blank">{{ o.amount/100000000 }} LSK <i class="fa fa-long-arrow-right"></i> {{ o.delegate || o.recipientId }}</a></p>
+				<p class="small"><a href="https://explorer.lisk.io/address/9485875898006061171L" target="_blank">... view more</a></p>
 			</div>
 		</div>
 
@@ -118,7 +119,7 @@
 						{{c.description}}
 					</div>
 					<div class="panel-footer">
-						<a class="github-link" ng-href="{{ c.repository }}" target="_blank"><i class="fa fa-github"></i><span ng-repeat="auth in c.authors"> {{auth}}{{$last ? '' : ', '}} </span></a>
+						<a class="link" ng-href="{{ c.repository }}" target="_blank"><i class="fa fa-github"></i><span ng-repeat="auth in c.authors"> {{auth}}{{$last ? '' : ', '}} </span></a>
 					</div>
 				</div>
 			</div>
@@ -161,11 +162,14 @@
 		<div class="spacer-25"></div>
 		<div class="row">
 			<div class="col-md-3" ng-repeat="m in members">
-				<div class="circle">
-					<img ng-src="img/{{m.img}}" class="img-responsive"/>
-				</div>
-				<p class="text-center margin-top-10">{{m.name}}</p>
+				<a ng-href="{{ m.link }}" target="_blank" class="link">
+					<div class="circle">
+						<img ng-src="img/{{ m.img }}" class="img-responsive" />
+					</div>
+					<p class="text-center margin-top-10">{{ m.name }}</p>
+				</a>
 			</div>
+		</div>
 	</div>
 
 	<!-- bower:js -->

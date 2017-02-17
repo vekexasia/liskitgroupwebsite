@@ -1,6 +1,8 @@
 var ligApp = angular.module ('ligApp', []);
 
 ligApp.controller('indexController', function indexController($scope, $http) {
+    $scope.income = []
+    $scope.outcome = []
     $scope.projects = [];
     $scope.contributions = [];
     $scope.authors = {};
@@ -14,15 +16,42 @@ ligApp.controller('indexController', function indexController($scope, $http) {
     $http.get ('https://' + $scope.lignode + '/api/accounts/getBalance?address=' + $scope.fulig.address).then (function (data) {
         $scope.fulig.balance = parseInt (data.data.balance) / 100000000;
     });
-    $http.get ('https://' + $scope.lignode + '/api/transactions?limit=3&recipientId=' + $scope.fulig.address).then (function (data) {
-        console.log("Income");
-        console.log(data.data.transactions);
-        $scope.income = data.data.transactions;
-    });
-    $http.get ('https://' + $scope.lignode + '/api/transactions?limit=3&senderId=' + $scope.fulig.address).then (function (data) {
-        console.log(data.data.transactions);
-        $scope.outcome = data.data.transactions;
-    });
+    $http.get('https://' + $scope.lignode + '/api/transactions?limit=3&recipientId=' + $scope.fulig.address).then(function (data) {
+        console.log('Income')
+        console.log(data.data.transactions)
+        let tempIncome = data.data.transactions
+
+        tempIncome.forEach(function (e) {
+            $http.get('https://' + $scope.lignode + '/api/accounts/getPublicKey?address=' + e.senderId).then(function (data) {
+                if (data.status === 200) {
+                    $http.get('https://' + $scope.lignode + '/api/delegates/get?publicKey=' + data.data.publicKey).then(function (data) {
+                        if (data.data.success && data.status === 200) {
+                            e.delegate = data.data.delegate.username
+                        }
+                    })
+                }
+            })
+            $scope.income.push(e)
+        }, this)
+    })
+    $http.get('https://' + $scope.lignode + '/api/transactions?limit=3&senderId=' + $scope.fulig.address).then(function (data) {
+        console.log('Outcome')
+        console.log(data.data.transactions)
+        let tempOutcome = data.data.transactions
+
+        tempOutcome.forEach(function (e) {
+            $http.get('https://' + $scope.lignode + '/api/accounts/getPublicKey?address=' + e.recipientId).then(function (data) {
+                if (data.data.success && data.status === 200) {
+                    $http.get('https://' + $scope.lignode + '/api/delegates/get?publicKey=' + data.data.publicKey).then(function (data) {
+                        if (data.data.success && data.status === 200) {
+                            e.delegate = data.data.delegate.username
+                        }
+                    })
+                }
+            })
+            $scope.outcome.push(e)
+        }, this)
+    })
     $http.get ('data/projects.json').then (function (data) {
         $scope.projects = data.data;
     });
