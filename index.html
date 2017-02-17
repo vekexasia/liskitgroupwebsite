@@ -118,9 +118,7 @@
 						{{c.description}}
 					</div>
 					<div class="panel-footer">
-						<span ng-repeat="auth in c.authors">{{auth}}&nbsp;</span>
-						<br>
-						<i class="fa fa-github"></i>
+						<a class="github-link" ng-href="{{ c.repository }}" target="_blank"><i class="fa fa-github"></i><span ng-repeat="auth in c.authors"> {{auth}}{{$last ? '' : ', '}} </span></a>
 					</div>
 				</div>
 			</div>
