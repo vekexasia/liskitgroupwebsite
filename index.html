@@ -23,8 +23,47 @@
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
   </head>
-  <body>
-	<div class="container" ng-controller="indexController">
+  <body ng-controller="indexController">
+
+	<div class="modal fade" id="outcomeDetailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		    <h4 class="modal-title" id="myModalLabel">Outcome details</h4>
+		  </div>
+		  <div class="modal-body">
+		    <table class="table table-striped">
+		    	<tr>
+		    		<td>Tx</td>
+		    		<td><a ng-href="https://explorer.lisk.io/tx/{{ selectedOutcome.id }}" target="_blank">{{ selectedOutcome.id }}</a>
+		    	</tr>
+		    	<tr>
+		    		<td>Date</td>
+		    		<td>{{ selectedOutcome.timestamp | date }}</td>
+		    	</tr>
+		    	<tr>
+		    		<td>Amount</td>
+		    		<td>{{ selectedOutcome.amount/100000000 }} LSK</td>
+		    	</tr>
+		    	<tr>
+		    		<td>To</td>
+		    		<td>{{ selectedOutcome.delegate || selectedOutcome.recipientId }}</td>
+		    	</tr>
+		    	<tr ng-if="selectedOutcome.description">
+		    		<td>Description</td>
+		    		<td>{{ selectedOutcome.description }}</td>
+		    	</tr>
+		    </table>
+		  </div>
+		  <div class="modal-footer">
+		    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container">
 		<div class="spacer-50"></div>
 		<div align="center"><img src="img/logo.jpg" height="150px" /></div>
 		<h1 class="text-center">Lisk <strong>Italian</strong> Group</h1>
@@ -66,7 +105,9 @@
 			<div class="col-md-4">
 				<p class="text-center"><strong>Outcome</strong></p>
 
-				<p ng-repeat="o in outcome" ng-if="o.amount/100000000 > 0"><a ng-href="https://explorer.lisk.io/tx/{{ o.id }}" target="_blank">{{ o.amount/100000000 }} LSK <i class="fa fa-long-arrow-right"></i> {{ o.delegate || o.recipientId }}</a></p>
+				<p ng-repeat="o in outcome" ng-if="o.amount/100000000 > 0">
+					<a href="" ng-click="outcomeDetails (o);" target="_blank">{{ o.amount/100000000 }} LSK <i class="fa fa-long-arrow-right"></i> {{ o.delegate || o.recipientId }}</a>	
+				</p>
 				<p class="small"><a href="https://explorer.lisk.io/address/{{fulig.address}}" target="_blank">... view more</a></p>
 			</div>
 		</div>
