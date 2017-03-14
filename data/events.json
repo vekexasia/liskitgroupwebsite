@@ -1,4 +1,12 @@
-[   {
+[
+    {
+        "type": "Meetup",
+        "title": "Crypto & Blockchains Meetup",
+        "location": "Milan",
+        "uri": "",
+        "date": "3 April 2017"
+    },
+    {
         "type": "Meetup",
         "title": "Bitcoin Meetup - Serata Lisk",
         "location": "Sellalab Torino",
