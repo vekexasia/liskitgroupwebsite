@@ -30,7 +30,7 @@ ligApp.controller('indexController', function indexController($scope, $http) {
                     });
                 }
             });
-            if (e.amount !== 0 && $scope.income < 5)
+            if (e.amount !== 0 && $scope.income.length < 5)
                 $scope.income.push(e);
         }, this);
     })
@@ -56,7 +56,7 @@ ligApp.controller('indexController', function indexController($scope, $http) {
 		                });
 		            }
 		        });
-                if (e.amount !== 0 && $scope.outcome < 5)
+                if (e.amount !== 0 && $scope.outcome.length < 5)
     		        $scope.outcome.push(e);
 		    }, this);
 		});
