@@ -1,5 +1,14 @@
 [
     {
+        "name": "lisk-voters",
+        "description": "'git diff' between two delegate / address voters ",
+        "type": "webservice",
+        "stage": "production",
+        "repository": "https://github.com/andreafs/lisk-voters",
+        "license": "MIT",
+        "authors": [ "dakk", "liskit" ]
+    },
+    {
         "name": "lisk-delegate-monitor",
         "description": "Web platform for lisk delegates",
         "type": "webservice",

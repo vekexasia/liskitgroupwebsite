@@ -90,7 +90,9 @@
 			<div class="col-md-4">
 				<p class="text-center"><strong>Income</strong></p>
 
-				<p ng-repeat="i in income" ng-if="i.amount/100000000 > 0"><a ng-href="https://explorer.lisk.io/tx/{{ i.id }}" target="_blank">{{ i.delegate || i.senderId }} <i class="fa fa-long-arrow-right"></i> {{ i.amount/100000000 }} LSK</a></p>
+				<p ng-repeat="i in income">
+					<a ng-href="https://explorer.lisk.io/tx/{{ i.id }}" target="_blank">{{ i.delegate || i.senderId }} <i class="fa fa-long-arrow-right"></i> {{ i.amount/100000000 }} LSK</a>
+				</p>
 				<p class="small"><a href="https://explorer.lisk.io/address/{{fulig.address}}" target="_blank">... view more</a></p>
 			</div>
 
@@ -106,7 +108,7 @@
 			<div class="col-md-4">
 				<p class="text-center"><strong>Outcome</strong></p>
 
-				<p ng-repeat="o in outcome" ng-if="o.amount/100000000 > 0">
+				<p ng-repeat="o in outcome">
 					<a href="" ng-click="outcomeDetails (o);" target="_blank">{{ o.amount/100000000 }} LSK <i class="fa fa-long-arrow-right"></i> {{ o.delegate || o.recipientId }}</a>	
 				</p>
 				<p class="small"><a href="https://explorer.lisk.io/address/{{fulig.address}}" target="_blank">... view more</a></p>
