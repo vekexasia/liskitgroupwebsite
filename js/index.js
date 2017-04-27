@@ -6,9 +6,10 @@ ligApp.controller('indexController', function indexController($scope, $http) {
     $scope.outcome = []
     $scope.projects = [];
     $scope.contributions = [];
+    $scope.initiatives = [];
     $scope.authors = {};
     $scope.events = [];
-    $scope.lignode = "liskwallet.punkrock.me"
+    $scope.lignode = "liskwallet.punkrock.me";
     $scope.fulig = {
         address: '13861531827625059307L',
         balance: null
@@ -72,6 +73,10 @@ ligApp.controller('indexController', function indexController($scope, $http) {
 
     $http.get ('data/authors.json').then (function (data) {
         $scope.authors = data.data;
+    });
+
+    $http.get ('data/initiatives.json').then (function (data) {
+        $scope.initiatives = data.data;
     });
 
     $http.get ('data/contributions.json').then (function (data) {

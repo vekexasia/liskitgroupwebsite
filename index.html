@@ -65,7 +65,7 @@
 
 	<div class="container">
 		<div class="spacer-50"></div>
-		<div align="center"><img src="img/logo.jpg" height="150px" /></div>
+		<div align="center"><img src="img/logo.svg" height="150px" /></div>
 		<h1 class="text-center">Lisk <strong>Italian</strong> Group</h1>
 		<div class="spacer-50"></div>
 		<h2><i class="fa fa-bullhorn title-icons-pipe" aria-hidden="true"></i> What or Who?</h2>
@@ -147,6 +147,32 @@
 			</td>
 			<td>
 				<a ng-href="{{e.uri}}" target="_blank"><i class="fa fa-external-link"></i></a>
+			</td>
+		</tr>
+		</table>
+
+		<div class="spacer-25"></div>
+		<hr>
+		<div class="spacer-25"></div>
+		<h2><i class="fa fa-tasks title-icons-pipe" aria-hidden="true"></i> Initiatives</h2>
+		<p>Initiatives organized by us.</p>
+		<div class="spacer-25"></div>
+		<table class="table">
+		<tr ng-repeat="i in initiatives" style="font-size: 120%">
+			<td>
+				<span style="color: #6e5494;">
+					<i class="fa fa-tasks"></i>
+					{{i.type}}
+				</span>
+			</td>
+			<td>
+				{{i.title}}
+			</td>
+			<td>
+				{{i.date}}
+			</td>
+			<td>
+				<a ng-href="{{i.uri}}" target="_blank"><i class="fa fa-external-link"></i></a>
 			</td>
 		</tr>
 		</table>
