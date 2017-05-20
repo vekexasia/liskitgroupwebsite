@@ -109,7 +109,7 @@
 				<p class="text-center"><strong>Outcome</strong></p>
 
 				<p ng-repeat="o in outcome">
-					<a href="" ng-click="outcomeDetails (o);" target="_blank">{{ o.amount/100000000 }} LSK <i class="fa fa-long-arrow-right"></i> {{ o.delegate || o.recipientId }}</a>	
+					<a href="" ng-click="outcomeDetails (o);" target="_blank">{{ o.amount/100000000 }} LSK <i class="fa fa-long-arrow-right"></i> {{ o.delegate || o.recipientId }}</a>
 				</p>
 				<p class="small"><a href="https://explorer.lisk.io/address/{{fulig.address}}" target="_blank">... view more</a></p>
 			</div>
@@ -143,7 +143,7 @@
 				<a ng-href="materials/{{e.pdf}}" target="_blank" >PDF</a>
 			</td>
 			<td>
-				<a ng-href="materials/{{e.ppt}}" >PPT</a>
+				<a ng-href="materials/{{e.ppt}}" >PPT / KEY</a>
 			</td>
 			<td>
 				<a ng-href="{{e.uri}}" target="_blank"><i class="fa fa-external-link"></i></a>
