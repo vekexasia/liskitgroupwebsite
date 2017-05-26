@@ -1,7 +1,25 @@
 [
     {
+        "name": "lisk_broadcast",
+        "description": "broadcast a tx on lisk network",
+        "type": "script",
+        "stage": "production",
+        "repository": "https://github.com/corsaro1/lisk_broadcast",
+        "license": "MIT",
+        "authors": [ "corsaro" ]
+    },
+    {
+        "name": "lisk-pool",
+        "description": "lisk distribution script",
+        "type": "script",
+        "stage": "production",
+        "repository": "https://github.com/dakk/lisk-pool",
+        "license": "MIT",
+        "authors": [ "dakk" ]
+    },
+    {
         "name": "lisk-voters",
-        "description": "'git diff' between two delegate / address voters ",
+        "description": "'git diff' between two delegate / address voters",
         "type": "webservice",
         "stage": "production",
         "repository": "https://github.com/andreafspeziale/lisk-voters",
