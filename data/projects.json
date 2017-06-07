@@ -1,5 +1,14 @@
 [
     {
+        "name": "lisk-cmd",
+        "description": "command line tool for lisk",
+        "type": "script",
+        "stage": "production",
+        "repository": "https://github.com/dakk/lisk-cmd",
+        "license": "MIT",
+        "authors": [ "dakk" ]
+    },
+    {
         "name": "lisk_broadcast",
         "description": "broadcast a tx on lisk network",
         "type": "script",
