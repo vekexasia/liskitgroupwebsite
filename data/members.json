@@ -3,13 +3,23 @@
     "name": "dakk",
     "img": "dakk_icon.jpg",
     "description": "",
-    "link": "https://github.com/dakk"
+    "link": "https://github.com/dakk",
+    "pool": {
+      "url": "https://dakk.github.io/lisk-pool/",
+      "percentage": 15,
+      "timing": "weekly"
+    }
   },
   {
     "name": "liskit",
     "img": "liskit_icon.png",
     "description": "",
-    "link": "https://github.com/andreafspeziale"
+    "link": "https://github.com/andreafspeziale",
+    "pool": {
+      "url": "http://liskit.me/",
+      "percentage": 20,
+      "timing": "weekly"
+    }
   },
   {
     "name": "anamix",
@@ -21,7 +31,12 @@
     "name": "corsaro",
     "img": "corsaro_icon.jpg",
     "description": "",
-    "link": ""
+    "link": "",
+    "pool": {
+      "url": "http://pool.liskworld.info",
+      "percentage": 10,
+      "timing": "weekly"
+    }
   },
   {
     "name": "splatters",
@@ -45,6 +60,10 @@
     "name": "ondin",
     "img": "ondin_icon.jpg",
     "description": "",
-    "link": ""
+    "link": "",
+    "pool": {
+      "percentage": 30,
+      "timing": "weekly"
+    }
   }
 ]
