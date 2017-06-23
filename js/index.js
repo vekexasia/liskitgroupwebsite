@@ -1,5 +1,3 @@
-var ligApp = angular.module ('ligApp', []);
-
 ligApp.controller('indexController', function indexController($scope, $http) {
 	$scope.epochTime = new Date(Date.UTC(2016, 4, 24, 17, 0, 0, 0)).getTime();
     $scope.income = []

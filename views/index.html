@@ -1,0 +1,223 @@
+	<div class="modal fade" id="outcomeDetailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		    <h4 class="modal-title" id="myModalLabel">Outcome details</h4>
+		  </div>
+		  <div class="modal-body">
+		    <table class="table table-striped">
+		    	<tr>
+		    		<td>Tx</td>
+		    		<td><a ng-href="https://explorer.lisk.io/tx/{{ selectedOutcome.id }}" target="_blank">{{ selectedOutcome.id }}</a>
+		    	</tr>
+		    	<tr>
+		    		<td>Date</td>
+		    		<td>{{ selectedOutcome.timestamp | date }}</td>
+		    	</tr>
+		    	<tr>
+		    		<td>Amount</td>
+		    		<td>{{ selectedOutcome.amount/100000000 }} LSK</td>
+		    	</tr>
+		    	<tr>
+		    		<td>To</td>
+		    		<td>{{ selectedOutcome.delegate || selectedOutcome.recipientId }}</td>
+		    	</tr>
+		    	<tr ng-if="selectedOutcome.description">
+		    		<td>Description</td>
+		    		<td>{{ selectedOutcome.description }}</td>
+		    	</tr>
+		    </table>
+		  </div>
+		  <div class="modal-footer">
+		    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container">
+		<div class="spacer-50"></div>
+		<div align="center"><img src="img/logo.svg" height="150px" /></div>
+		<h1 class="text-center">Lisk <strong>Italian</strong> Group</h1>
+		<div class="spacer-50"></div>
+		<h2><i class="fa fa-bullhorn title-icons-pipe" aria-hidden="true"></i> What or Who?</h2>
+		<div class="spacer-25"></div>
+		<p>
+			The <strong>LIG</strong> is composed by 8 Italian delegates working for the Lisk environment since March-April 2016 (after the end of Lisk ICO).<br>
+			Everyone is putting its own skills at disposal to improve Lisk everyday.<br><br>
+			Our <strong>goal</strong> is to fund projects related to Lisk like <strong>B-Apps</strong> (aka blockchain apps) or tools designed by us.<br>
+			We aim at reporting news and releases about  those projects to the community.<br><br>
+			With the multi-signature address <a href="https://explorer.lisk.io/address/13861531827625059307L"><i>{{fulig.address}}</i></a> we’re going to create an <strong>official fund</strong> named <strong>FULIG</strong> to support these projects.
+			Each month LIG members (and all Liskers who want) will be free to donate a percentage of their forged Lisk to the fund.<br>
+			The FULIG will vote all most recent 101 donors.
+		</p>
+
+		<!--<div align="center" style="font-size: 300%">
+			<i ng-if="fulig.balance == null" class="fa fa-spin fa-refresh"></i>
+			<span ng-if="fulig.balance != null">{{fulig.balance}} LSK</span>
+		</div>-->
+		<div class="spacer-25"></div>
+		<div class="spacer-25"></div>
+		<div class="row" ng-cloak>
+			<div class="col-md-4">
+				<p class="text-center"><strong>Income</strong></p>
+
+				<p ng-repeat="i in income">
+					<a ng-href="https://explorer.lisk.io/tx/{{ i.id }}" target="_blank">{{ i.delegate || i.senderId }} <i class="fa fa-long-arrow-right"></i> {{ i.amount/100000000 }} LSK</a>
+				</p>
+				<p class="small"><a href="https://explorer.lisk.io/address/{{fulig.address}}" target="_blank">... view more</a></p>
+			</div>
+
+			<div class="col-md-4">
+				<p class="text-center"><strong>Balance</strong></p>
+
+				<p class="text-center">
+					<!--<i ng-if="fulig.balance == null" class="fa fa-spin fa-refresh"></i>-->
+					<span ng-if="fulig.balance != null">{{fulig.balance}} LSK</span>
+				</p>
+			</div>
+
+			<div class="col-md-4">
+				<p class="text-center"><strong>Outcome</strong></p>
+
+				<p ng-repeat="o in outcome">
+					<a href="" ng-click="outcomeDetails (o);" target="_blank">{{ o.amount/100000000 }} LSK <i class="fa fa-long-arrow-right"></i> {{ o.delegate || o.recipientId }}</a>
+				</p>
+				<p class="small"><a href="https://explorer.lisk.io/address/{{fulig.address}}" target="_blank">... view more</a></p>
+			</div>
+		</div>
+
+
+		<div class="spacer-25"></div>
+		<hr>
+		<div class="spacer-25"></div>
+		<h2><i class="fa fa-calendar title-icons-pipe" aria-hidden="true"></i> Events</h2>
+		<p>Events organized by us.<br>If you are getting our slides for your Lisk events remember to mention our delegates and ask us for permission.</p>
+		<div class="spacer-25"></div>
+		<table class="table">
+		<tr ng-repeat="e in events" style="font-size: 120%">
+			<td>
+				<span style="color: #6e5494;">
+					<i class="fa fa-calendar-check-o"></i>
+					{{e.type}}
+				</span>
+			</td>
+			<td>
+				{{e.title}}
+			</td>
+			<td>
+				{{e.date}}
+			</td>
+			<td>
+				{{e.location}}
+			</td>
+			<td>
+				<a ng-href="materials/{{e.pdf}}" target="_blank" >PDF</a>
+			</td>
+			<td>
+				<a ng-href="materials/{{e.ppt}}" >PPT / KEY</a>
+			</td>
+			<td>
+				<a ng-href="{{e.uri}}" target="_blank"><i class="fa fa-external-link"></i></a>
+			</td>
+		</tr>
+		</table>
+
+		<div class="spacer-25"></div>
+		<hr>
+		<div class="spacer-25"></div>
+		<h2><i class="fa fa-tasks title-icons-pipe" aria-hidden="true"></i> Initiatives</h2>
+		<p>Initiatives organized by us.</p>
+		<div class="spacer-25"></div>
+		<table class="table">
+		<tr ng-repeat="i in initiatives" style="font-size: 120%">
+			<td>
+				<span style="color: #6e5494;">
+					<i class="fa fa-tasks"></i>
+					{{i.type}}
+				</span>
+			</td>
+			<td>
+				{{i.title}}
+			</td>
+			<td>
+				{{i.date}}
+			</td>
+			<td>
+				<a ng-href="{{i.uri}}" target="_blank"><i class="fa fa-external-link"></i></a>
+			</td>
+		</tr>
+		</table>
+
+
+		<div class="spacer-25"></div>
+		<hr>
+		<div class="spacer-25"></div>
+		<h2><i class="fa fa-coffee title-icons-pipe" aria-hidden="true"></i> Projects</h2>
+		<p>Project related to the <strong>Lisk ecosystem</strong> and developed by the <strong>LIG</strong> members.</p>
+		<div class="spacer-25"></div>
+		<div class="row">
+			<div class="col-md-3" ng-repeat="c in projects">
+				<div class="panel" ng-class="{ 'panel-success': c.stage == 'production', 'panel-warning': c.stage == 'development' }">
+					<div class="panel-heading">
+						<h3 class="panel-title">{{c.name}}</h3>
+					</div>
+					<div class="panel-body" style="height: 150px">
+						{{c.type}} - {{c.stage}}
+						<hr>
+						{{c.description}}
+					</div>
+					<div class="panel-footer">
+						<a class="link" ng-href="{{ c.repository }}" target="_blank"><i class="fa fa-github"></i><span ng-repeat="auth in c.authors"> {{auth}}{{$last ? '' : ', '}} </span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="spacer-25"></div>
+		<hr>
+		<div class="spacer-25"></div>
+		<h2><i class="fa fa-thumbs-o-up title-icons-pipe" aria-hidden="true"></i> Contributions</h2>
+		<p>Contributions and pull requests to external projects related to the <strong>Lisk ecosystem</strong> or to the <strong>Lisk core software</strong>.</p>
+		<div class="spacer-25"></div>
+		<table class="table">
+		<tr ng-repeat="c in contributions" style="font-size: 120%">
+			<td>
+				<span style="color: #6e5494;">
+					<i class="fa fa-code-fork"></i>
+					{{c.repository}}
+				</span>
+			</td>
+			<td>
+				{{c.title}}
+			</td>
+			<td>
+				{{c.date}}
+			</td>
+			<td>
+				<span ng-repeat="auth in c.authors">{{auth}}&nbsp;</span>
+			</td>
+			<td>
+				<a href="{{c.uri}}" target="_blank"><i class="fa fa-external-link"></i></a>
+			</td>
+		</tr>
+		</table>
+		<div class="spacer-25"></div>
+		<hr>
+		<div class="spacer-25"></div>
+		<h2><i class="fa fa-user-o title-icons-pipe" aria-hidden="true"></i> Members</h2>
+		<p>All the <strong>Lisk Italian members</strong> that are <strong>actively</strong> contribute to the ecosystem.</p>
+		<div class="spacer-25"></div>
+		<div class="row">
+			<div class="col-md-3" ng-repeat="m in members">
+				<a ng-href="{{ m.link }}" target="_blank" class="link">
+					<div class="circle">
+						<img ng-src="img/{{ m.img }}" class="img-responsive" />
+					</div>
+					<p class="text-center margin-top-10">{{ m.name }}</p>
+				</a>
+			</div>
+		</div>
+	</div>
