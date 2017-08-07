@@ -69,10 +69,6 @@ ligApp.controller('indexController', function indexController($scope, $http) {
         $scope.events = data.data;
     });
 
-    $http.get ('data/authors.json').then (function (data) {
-        $scope.authors = data.data;
-    });
-
     $http.get ('data/initiatives.json').then (function (data) {
         $scope.initiatives = data.data;
     });

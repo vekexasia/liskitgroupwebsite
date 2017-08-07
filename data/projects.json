@@ -63,6 +63,15 @@
         "authors": [ "dakk", "liskit" ]
     },
     {
+        "name": "dpos-offline",
+        "description": "Offline Signing Transactions for DPOS Blockchains",
+        "type": "library",
+        "stage": "production",
+        "repository": "https://github.com/vekexasia/dpos-offline",
+        "license": "MIT",
+        "authors": [ "vekexasia" ]
+    },
+    {
         "name": "lisk-js-autorebuilder",
         "description": "Lisk node anti-fork made in Javascript",
         "type": "script",

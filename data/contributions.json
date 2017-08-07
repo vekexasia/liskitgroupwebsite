@@ -1,4 +1,18 @@
 [   {
+        "title": "Disappearing Transactions Bug",
+        "repository": "LiskHQ/lisk",
+        "uri": "https://github.com/LiskHQ/lisk/issues/697",
+        "date": "7 August 2017",
+        "authors": [ "vekexasia" ]
+    },
+    {
+        "title": "Transaction/get API does not return asset for vote transactions Bug",
+        "repository": "LiskHQ/lisk",
+        "uri": "https://github.com/LiskHQ/lisk/issues/624",
+        "date": "22 June 2017",
+        "authors": [ "vekexasia" ]
+    },
+    {
         "title": "Docs improvements",
         "repository": "LiskHQ/lisk-docs",
         "uri": "https://github.com/LiskHQ/lisk-docs/pull/24",

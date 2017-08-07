@@ -65,5 +65,11 @@
       "percentage": 30,
       "timing": "weekly"
     }
+  },
+  {
+    "name": "vekexasia",
+    "img": "vek_icon.jpg",
+    "description": "",
+    "link": "https://github.com/vekexasia"
   }
 ]
