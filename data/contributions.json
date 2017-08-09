@@ -1,4 +1,11 @@
 [   {
+        "title": "Transaction pool bug in transactionInPool",
+        "repository": "LiskHQ/lisk",
+        "uri": "https://github.com/LiskHQ/lisk/pull/708",
+        "date": "9 August 2017",
+        "authors": [ "vekexasia" ]
+    },
+    {
         "title": "Disappearing Transactions Bug",
         "repository": "LiskHQ/lisk",
         "uri": "https://github.com/LiskHQ/lisk/issues/697",
