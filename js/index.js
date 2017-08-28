@@ -85,4 +85,73 @@ ligApp.controller('indexController', function indexController($scope, $http) {
     	$scope.selectedOutcome = o;
     	$('#outcomeDetailsModal').modal ('show');
     };
+
+    // countdown start
+    var rewards = {
+      milestones: [
+        500000000, // Initial Reward
+        400000000, // Milestone 1
+        300000000, // Milestone 2
+        200000000, // Milestone 3
+        100000000  // Milestone 4
+      ],
+        offset: 1451520,   // Start rewards at block (n)
+        distance: 3000000, // Distance between each milestone
+    };
+
+    $scope.countdown = {
+      daysLeft: 0,
+      hoursLeft: 0,
+      minutesLeft: 0,
+      secondsLeft: 0,
+      curReward: 0, // current reward in lisk
+      nextRewardHeight: 0, // next reward will start at this block height
+      nextReward: 0, // next reward in lisk
+      blockDate: '' // next reward in lisk
+    };
+    $http.get('https://' + $scope.lignode + '/api/blocks?limit=1&orderBy=height:desc').then(function (data) {
+      var lastBlock = data.data.blocks[0];
+      var blockHeight = lastBlock.height;
+      var blockTimestamp = lastBlock.timestamp;
+      var blockTimeDate = moment.utc($scope.epochTime).add(blockTimestamp, 'seconds');
+
+      // TODO: this will fail when milestone 4 gets reached
+      var curMilestoneIdx = Math.floor((blockHeight - rewards.offset)/rewards.distance);
+      var nextMilestoneAtBlockHeight = (curMilestoneIdx+1)*rewards.distance + rewards.offset + 1;
+      var nextMilestoneBlockTime = blockTimeDate.clone()
+        .add(10 /*blockheight*/ * (nextMilestoneAtBlockHeight - blockHeight), 'seconds');
+
+      $scope.countdown.blockDate = nextMilestoneBlockTime.format('YYYY-MM-DD hh:mm:ss');
+      $scope.countdown.curReward = rewards.milestones[curMilestoneIdx] / Math.pow(10,8);
+      $scope.countdown.nextReward = rewards.milestones[curMilestoneIdx+1] / Math.pow(10,8);
+      $scope.countdown.nextRewardHeight = nextMilestoneAtBlockHeight;
+
+
+
+      // counter start!
+      setInterval(function() {
+        var now = moment.utc();
+        var daysLeft    = nextMilestoneBlockTime.diff(now, 'days');
+        var hoursLeft   = nextMilestoneBlockTime.clone()
+          .subtract(daysLeft, 'days')
+          .diff(now, 'hours');
+        var minutesLeft = nextMilestoneBlockTime.clone()
+          .subtract(daysLeft, 'days')
+          .subtract(hoursLeft, 'hours')
+          .diff(now, 'minutes');
+        var secondsLeft = nextMilestoneBlockTime.clone()
+          .subtract(daysLeft, 'days')
+          .subtract(hoursLeft, 'hours')
+          .subtract(minutesLeft, 'minutes')
+          .diff(now, 'seconds');
+        $scope.$apply(function () {
+          $scope.countdown.hoursLeft = hoursLeft;
+          $scope.countdown.minutesLeft = minutesLeft;
+          $scope.countdown.secondsLeft = secondsLeft;
+          $scope.countdown.daysLeft = daysLeft;
+        });
+      }, 1000);
+    });
+
+
 });
