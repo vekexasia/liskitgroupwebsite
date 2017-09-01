@@ -6,11 +6,25 @@
         "authors": [ "liskit" ]
     },
     {
+        "title": "Blocks Rewind Bug",
+        "repository": "LiskHQ/lisk",
+        "uri": "https://blog.lisk.io/stopping-the-stopchain-bug-e971b2654014",
+        "date": "28 August 2017",
+        "authors": [ "vekexasia" ]
+    },
+    {
         "title": "Docs issue",
         "repository": "LiskHQ/lisk",
         "uri": "https://github.com/LiskHQ/lisk/issues/752",
         "date": "28 August 2017",
         "authors": [ "liskit" ]
+    },
+    {
+        "title": "Properly handling votes rollback",
+        "repository": "LiskHQ/lisk",
+        "uri": "https://blog.lisk.io/lisk-core-0-9-3-properly-handling-votes-rollback-edge-case-bug-squashed-893eb201ad0c",
+        "date": "2 August 2017",
+        "authors": [ "vekexasia" ]
     },
     {
         "title": "Transaction pool bug in transactionInPool",
