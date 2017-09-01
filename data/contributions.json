@@ -1,4 +1,18 @@
 [   {
+        "title": "Lisk db schema",
+        "repository": "gist/andreafspeziale",
+        "uri": "https://gist.github.com/andreafspeziale/088cfce3f7b3fa08c2fbcc4d89d80739",
+        "date": "31 August 2017",
+        "authors": [ "liskit" ]
+    },
+    {
+        "title": "Docs issue",
+        "repository": "LiskHQ/lisk",
+        "uri": "https://github.com/LiskHQ/lisk/issues/752",
+        "date": "28 August 2017",
+        "authors": [ "liskit" ]
+    },
+    {
         "title": "Transaction pool bug in transactionInPool",
         "repository": "LiskHQ/lisk",
         "uri": "https://github.com/LiskHQ/lisk/pull/708",
