@@ -17,7 +17,7 @@ const vue               = require('webpack-blocks-vue')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const autoprefixer      = require('autoprefixer')
-// const config            = require('config');
+const config            = require('config');
 const fs                = require('fs');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
@@ -53,7 +53,7 @@ const productionPlugins = [
     sourceMap: false
   })
 ];
-// fs.writeFileSync(`${__dirname}/config.json`, JSON.stringify(Object.assign({}, config, {priv: null}), null, 2));
+fs.writeFileSync(`${__dirname}/config.json`, JSON.stringify(Object.assign({}, config, {priv: null}), null, 2));
 module.exports = createConfig([
   // This will use ./src/index.* based on extension resolution order
   entryPoint('./src'),

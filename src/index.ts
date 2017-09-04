@@ -8,11 +8,16 @@ import * as VueClipboard from 'vue-clipboard2';
 import {AppComponent} from './components';
 import { router } from './router';
 import {sprintf} from 'sprintf';
+import { viewUtils } from './utils';
+import { baseConfig } from './models';
 
 // firebase.initializeApp(config['firebase']);
 Vue.use(VueMaterial);
 Vue.use(VueClipboard);
 Vue.use(VueCookie);
+
+Vue.mixin({data: () => ({viewUtils, baseConfig})});
+
 Vue.filter('decimals', (value:number) => {
   return sprintf('%08d',((value - (value | 0))*Math.pow(10,8)) | 0 );
 });

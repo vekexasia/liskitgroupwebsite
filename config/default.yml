@@ -1,0 +1,330 @@
+base:
+  explorerLink: https://explorer.lisk.io
+  nodeAddress: https://liskwallet.punkrock.me
+  fuligAddress: 13861531827625059307L
+
+outtxs:
+  10581746785585012221:
+    description: Multisig test transaction
+  2529251274377150655:
+    description: Donation to Legambiente for the italian earthquake
+  5674541128610044518:
+    description: Refund to @anamix for the food expenses of the Turin meetup
+  14768722220815178480:
+    description: Donation for LSK community work
+  13633284209897505288:
+    description: Donation for LSK community work
+  16081508973847720328:
+    description: Donation for LSK community work
+
+members:
+  - name: dakk
+    img: dakk_icon.jpg
+    description: ''
+    link: https://github.com/dakk
+    pool:
+      url: https://dakk.github.io/lisk-pool/
+      percentage: 15
+      timing: weekly
+  - name: liskit
+    img: liskit_icon.png
+    description: ''
+    link: https://github.com/andreafspeziale
+    pool:
+      url: http://liskit.me/
+      percentage: 20
+      timing: weekly
+  - name: anamix
+    img: anamix_icon.jpg
+    description: ''
+    link: ''
+  - name: corsaro
+    img: corsaro_icon.jpg
+    description: ''
+    link: ''
+    pool:
+      url: http://pool.liskworld.info
+      percentage: 10
+      timing: weekly
+  - name: splatters
+    img: splatters_icon.jpg
+    description: ''
+    link: ''
+  - name: redsn0w
+    img: redsnowicon.jpg
+    description: ''
+    link: ''
+  - name: gregorst
+    img: gregorst_icon.jpg
+    description: ''
+    link: ''
+  - name: ondin
+    img: ondin_icon.jpg
+    description: ''
+    link: ''
+    pool:
+      percentage: 30
+      timing: weekly
+  - name: vekexasia
+    img: vek_icon.jpg
+    description: ''
+    link: https://github.com/vekexasia
+
+events:
+  - type: Event Talk
+    title: Chatbots! Telegram + Blockchain
+    location: University of Politecnico - Turin
+    uri: https://www.facebook.com/events/501480519975730/
+    date: 20 May 2017
+    pdf: turin_20_05_17.pdf
+    ppt: turin_20_05_17.key
+  - type: Meetup
+    title: Crypto & Blockchains Meetup
+    location: Milan, MikaMai / LinkMe
+    uri: https://www.meetup.com/it-IT/Cripto-Blockchains-Meetup/events/238406977/?from=ref
+    date: 3 April 2017
+    pdf: milan_03_04_17.pdf
+    ppt: milan_03_04_17.pptx
+  - type: Meetup
+    title: Bitcoin Meetup - Serata Lisk
+    location: Sellalab Torino
+    uri: https://www.meetup.com/Meetup-Bitcoin-Torino/events/237397309/
+    date: 20 February 2017
+    pdf: turin_20_02_17.pdf
+    ppt: turin_20_02_17.pptx
+
+projects:
+  - name: lisk-cmd
+    description: command line tool for lisk
+    type: script
+    stage: production
+    repository: https://github.com/dakk/lisk-cmd
+    license: MIT
+    authors:
+      - dakk
+  - name: lisk_broadcast
+    description: broadcast a tx on lisk network
+    type: script
+    stage: production
+    repository: https://github.com/corsaro1/lisk_broadcast
+    license: MIT
+    authors:
+      - corsaro
+  - name: lisk-pool
+    description: lisk distribution script
+    type: script
+    stage: production
+    repository: https://github.com/dakk/lisk-pool
+    license: MIT
+    authors:
+      - dakk
+  - name: lisk-voters
+    description: "'git diff' between two delegate / address voters"
+    type: webservice
+    stage: production
+    repository: https://github.com/andreafspeziale/lisk-voters
+    license: MIT
+    authors:
+      - dakk
+      - liskit
+  - name: lisk-delegate-monitor
+    description: Web platform for lisk delegates
+    type: webservice
+    stage: production
+    repository: https://github.com/dakk/lisk-delegate-monitor
+    license: MIT
+    authors:
+      - dakk
+  - name: liskitbot
+    description: 'Simple telegram bot for Lisk machine status (check JS branch) '
+    type: bot
+    stage: production
+    repository: https://github.com/andreafspeziale/liskitbot
+    license: MIT
+    authors:
+      - liskit
+  - name: liskapi
+    description: A smart wrapper for Lisk node APIs
+    type: library
+    stage: development
+    repository: https://github.com/dakk/liskapi
+    license: MIT
+    authors:
+      - dakk
+      - liskit
+  - name: dpos-offline
+    description: Offline Signing Transactions for DPOS Blockchains
+    type: library
+    stage: production
+    repository: https://github.com/vekexasia/dpos-offline
+    license: MIT
+    authors:
+      - vekexasia
+  - name: lisk-js-autorebuilder
+    description: Lisk node anti-fork made in Javascript
+    type: script
+    stage: production
+    repository: https://github.com/andreafspeziale/lisk-js-autorebuilder
+    license: MIT
+    authors:
+      - liskit
+  - name: wallisk
+    description: 'Not just a simple LISK blockchain height checker '
+    type: software
+    stage: development
+    repository: https://github.com/corsaro1/wallisk
+    license: MIT
+    authors:
+      - corsaro
+  - name: lisk-dice
+    description: 'Dice game for Lisk, Shift and Ark '
+    type: webservice
+    stage: development
+    repository: https://github.com/dakk/lisk-dice
+    license: MIT
+    authors:
+      - dakk
+  - name: lisk-dump-detector
+    description: Detect delegates who send money to know exchanges addresses
+    type: webservice
+    stage: development
+    repository: Dice game for Lisk, Shift and Ark
+    license: MIT
+    authors:
+      - dakk
+  - name: termux-liskmonitor
+    description: A termux script for monitoring Lisk delegate
+    type: mobile
+    stage: development
+    repository: https://github.com/dakk/termux-liskmonitor
+    license: MIT
+    authors:
+      - dakk
+  - name: lisk-italian-group
+    description: This website
+    type: website
+    stage: development
+    repository: https://github.com/dakk/lisk-italian-group
+    license: MIT
+    authors:
+      - dakk
+      - liskit
+  - name: lisk-explorer
+    description: Lisk network explorer
+    type: script
+    stage: production
+    repository: https://github.com/andreafspeziale/lisk-explorer.git
+    license: MIT
+    authors:
+      - liskit
+  - name: liskit-dashboard
+    description: Liskit voters dashboard
+    type: website
+    stage: production
+    repository: https://github.com/andreafspeziale/liskit-dashboard.git
+    license: MIT
+    authors:
+      - liskit
+  - name: liskitbash
+    description: Smart bash wrapper for Lisk installation and update
+    type: script
+    stage: development
+    repository: https://github.com/andreafspeziale/liskitbash.git
+    license: MIT
+    authors:
+      - liskit
+  - name: lisk-ansible
+    description: Virtual Lisk local node for development
+    type: devops
+    stage: production
+    repository: https://github.com/andreafspeziale/lisk-ansible.git
+    license: MIT
+    authors:
+      - liskit
+
+
+contributions:
+  - title: Lisk db schema
+    repository: gist/andreafspeziale
+    uri: https://gist.github.com/andreafspeziale/088cfce3f7b3fa08c2fbcc4d89d80739
+    date: 31 August 2017
+    authors:
+      - liskit
+  - title: Blocks Rewind Bug
+    repository: LiskHQ/lisk
+    uri: https://blog.lisk.io/stopping-the-stopchain-bug-e971b2654014
+    date: 28 August 2017
+    authors:
+      - vekexasia
+  - title: Docs issue
+    repository: LiskHQ/lisk
+    uri: https://github.com/LiskHQ/lisk/issues/752
+    date: 28 August 2017
+    authors:
+      - liskit
+  - title: Properly handling votes rollback
+    repository: LiskHQ/lisk
+    uri: https://blog.lisk.io/lisk-core-0-9-3-properly-handling-votes-rollback-edge-case-bug-squashed-893eb201ad0c
+    date: 2 August 2017
+    authors:
+      - vekexasia
+  - title: Transaction pool bug in transactionInPool
+    repository: LiskHQ/lisk
+    uri: https://github.com/LiskHQ/lisk/pull/708
+    date: 9 August 2017
+    authors:
+      - vekexasia
+  - title: Disappearing Transactions Bug
+    repository: LiskHQ/lisk
+    uri: https://github.com/LiskHQ/lisk/issues/697
+    date: 7 August 2017
+    authors:
+      - vekexasia
+  - title: Transaction/get API does not return asset for vote transactions Bug
+    repository: LiskHQ/lisk
+    uri: https://github.com/LiskHQ/lisk/issues/624
+    date: 22 June 2017
+    authors:
+      - vekexasia
+  - title: Docs improvements
+    repository: LiskHQ/lisk-docs
+    uri: https://github.com/LiskHQ/lisk-docs/pull/24
+    date: 24 January 2017
+    authors:
+      - liskit
+  - title: Responses updated
+    repository: LiskHQ/lisk-docs
+    uri: https://github.com/LiskHQ/lisk-docs/pull/23
+    date: 23 January 2017
+    authors:
+      - liskit
+  - title: Update API responses
+    repository: LiskHQ/lisk-docs
+    uri: https://github.com/LiskHQ/lisk-docs/pull/22
+    date: 19 January 2017
+    authors:
+      - liskit
+  - title: Response correction in APIs doc
+    repository: LiskHQ/lisk-docs
+    uri: https://github.com/LiskHQ/lisk-docs/pull/21
+    date: 18 January 2017
+    authors:
+      - liskit
+  - title: Peers count API
+    repository: LiskHQ/lisk
+    uri: https://github.com/LiskHQ/lisk/pull/365
+    date: 3 January 2017
+    authors:
+      - dakk
+  - title: Forging statistics
+    repository: LiskHQ/lisk-ui
+    uri: https://github.com/LiskHQ/lisk-ui/pull/90
+    date: 21 December 2016
+    authors:
+      - dakk
+  - title: Add delegate forging statistics
+    repository: LiskHQ/lisk
+    uri: https://github.com/LiskHQ/lisk/pull/343
+    date: 20 December 2016
+    authors:
+      - dakk
