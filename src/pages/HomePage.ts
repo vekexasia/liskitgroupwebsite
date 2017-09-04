@@ -5,16 +5,18 @@ import {
   BlockRewardComponent,
   WhatOrWhoComponent,
   FuligComponent,
-  ProjectsComponent
+  ProjectsComponent,
+  ContributionsComponent
 } from '../components'
 
 @Component({
   components: {
-    "v-blockreward": BlockRewardComponent,
-    "v-whatorwho"  : WhatOrWhoComponent,
-    "v-fulig"      : FuligComponent,
-    "v-events"     : EventsComponent,
-    "v-projects": ProjectsComponent
+    "v-blockreward"  : BlockRewardComponent,
+    "v-whatorwho"    : WhatOrWhoComponent,
+    "v-fulig"        : FuligComponent,
+    "v-events"       : EventsComponent,
+    "v-projects"     : ProjectsComponent,
+    "v-contributions": ContributionsComponent
   }
 })
 export default class IndexPage extends Vue {

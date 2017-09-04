@@ -16,6 +16,7 @@
     <v-fulig></v-fulig>
     <v-events></v-events>
     <v-projects></v-projects>
+    <v-contributions></v-contributions>
   </div>
 </template>
 <script lang="ts" src="./HomePage.ts"/>

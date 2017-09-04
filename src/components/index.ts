@@ -4,6 +4,7 @@ import WhatOrWhoComponent from './WhatOrWhoComponent.vue';
 import FuligComponent from './FuligComponent.vue';
 import EventsComponent from './EventsComponent.vue';
 import ProjectsComponent from './ProjectsComponent.vue';
+import ContributionsComponent from './ContributionsComponent.vue';
 
 export {
   AppComponent,
@@ -11,5 +12,6 @@ export {
   WhatOrWhoComponent,
   FuligComponent,
   EventsComponent,
-  ProjectsComponent
+  ProjectsComponent,
+  ContributionsComponent
 };

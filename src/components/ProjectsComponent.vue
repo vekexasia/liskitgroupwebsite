@@ -12,7 +12,6 @@
           </md-card-header>
           <md-card-content style="font-weight:normal; height: 48px;">
             {{p.description}}
-
           </md-card-content>
           <md-card-actions>
             <div class="proj_data">
