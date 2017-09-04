@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import { HomePage } from './pages/';
+import { HomePage, PoolPage } from './pages/';
 import firebase from 'firebase';
 
 
@@ -16,7 +16,14 @@ const routes: RouteConfig[] = [
       title: 'LIG - Lisk Italian Group'
     }
   },
-
+  {
+    path: '/pool',
+    component: PoolPage,
+    props: true,
+    meta: {
+      title: 'FULIG - 75% Profit Sharing Pool from LIG'
+    }
+  },
   {path: '*', redirect: '/'}
 ];
 
