@@ -4,14 +4,17 @@ import {
   EventsComponent,
   BlockRewardComponent,
   WhatOrWhoComponent,
-  FuligComponent } from '../components'
+  FuligComponent,
+  ProjectsComponent
+} from '../components'
 
 @Component({
   components: {
     "v-blockreward": BlockRewardComponent,
     "v-whatorwho"  : WhatOrWhoComponent,
     "v-fulig"      : FuligComponent,
-    "v-events"      : EventsComponent
+    "v-events"     : EventsComponent,
+    "v-projects": ProjectsComponent
   }
 })
 export default class IndexPage extends Vue {

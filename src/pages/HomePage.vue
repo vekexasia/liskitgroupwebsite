@@ -15,6 +15,7 @@
     <v-whatorwho></v-whatorwho>
     <v-fulig></v-fulig>
     <v-events></v-events>
+    <v-projects></v-projects>
   </div>
 </template>
 <script lang="ts" src="./HomePage.ts"/>
