@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import { members } from '../models';
+import { members } from '../../models';
 
 @Component({
   components: {}

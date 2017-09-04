@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import { baseConfig, members } from '../models';
-import { cachedAddressToUserName, cachedPubKeyToUserName, liskApi, viewUtils } from '../utils';
+import { baseConfig, members } from '../../models';
+import { cachedAddressToUserName, cachedPubKeyToUserName, liskApi, viewUtils } from '../../utils';
 import BigNumber from 'bignumber.js';
 
 type Item = {

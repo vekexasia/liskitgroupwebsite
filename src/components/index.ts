@@ -1,10 +1,10 @@
 import AppComponent from './AppComponent.vue';
-import BlockRewardComponent from './BlockRewardComponent.vue';
-import WhatOrWhoComponent from './WhatOrWhoComponent.vue';
-import FuligComponent from './FuligComponent.vue';
-import EventsComponent from './EventsComponent.vue';
-import ProjectsComponent from './ProjectsComponent.vue';
-import ContributionsComponent from './ContributionsComponent.vue';
+import BlockRewardComponent from './home/BlockRewardComponent.vue';
+import WhatOrWhoComponent from './home/WhatOrWhoComponent.vue';
+import FuligComponent from './home/FuligComponent.vue';
+import EventsComponent from './home/EventsComponent.vue';
+import ProjectsComponent from './home/ProjectsComponent.vue';
+import ContributionsComponent from './home/ContributionsComponent.vue';
 
 export {
   AppComponent,

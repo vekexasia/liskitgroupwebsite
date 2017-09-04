@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import { Project, projects } from '../models';
+import { Project, projects } from '../../models';
 @Component({})
 export default class InitiativesComponent extends Vue {
   projects = projects;

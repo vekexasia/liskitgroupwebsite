@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import { liskApi } from '../utils';
+import { liskApi } from '../../utils';
 import * as moment from 'moment';
 
 const epoch   = new Date(Date.UTC(2016, 4, 24, 17, 0, 0, 0)).getTime();
