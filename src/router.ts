@@ -21,7 +21,7 @@ const routes: RouteConfig[] = [
     component: PoolPage,
     props: true,
     meta: {
-      title: 'FULIG - 75% Profit Sharing Pool from LIG'
+      title: 'FULIG - 90% Profit Sharing Pool from LIG'
     }
   },
   {path: '*', redirect: '/'}

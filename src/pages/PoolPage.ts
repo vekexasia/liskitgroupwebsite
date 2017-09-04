@@ -1,32 +1,19 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import {
-  EventsComponent,
-  BlockRewardComponent,
-  WhatOrWhoComponent,
-  FuligComponent,
-  ProjectsComponent,
   MembersComponent,
-  ContributionsComponent
 } from '../components'
-import { Member, members } from '../models';
-import { liskApi } from '../utils';
-import { TransactionType, Transaction } from 'risejs';
+import {members} from '../models';
+import {liskApi} from '../utils';
 
 @Component({
   components: {
-    "v-blockreward"  : BlockRewardComponent,
-    "v-whatorwho"    : WhatOrWhoComponent,
-    "v-fulig"        : FuligComponent,
-    "v-events"       : EventsComponent,
-    "v-projects"     : ProjectsComponent,
-    "v-contributions": ContributionsComponent,
     "v-members"      : MembersComponent
   }
 })
 export default class PoolPage extends Vue {
   members                  = members;
-  userAddress: string      = '9102643396261850794L';
+  userAddress: string      = '';
   checking                 = false;
   results                  = null;
   greyedMembers: number[]  = [];
@@ -47,7 +34,7 @@ export default class PoolPage extends Vue {
     const memberVoters = await Promise.all(
       members.map(m => liskApi.delegates.getByUsername(m.name)
         .then(d => liskApi.delegates.getVoters(d.delegate.publicKey))
-        .then(({accounts}) => accounts)
+        .then(({ accounts }) => accounts)
       )
     );
     const membersVoted = memberVoters
