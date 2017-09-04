@@ -14,7 +14,8 @@ type Item = {
 })
 export default class FuligComponent extends Vue {
   fuligItems: Item[] = [
-    {icon: 'people', label: 'Delegate Name', value: 'fulig'}
+    {icon: 'people', label: 'Delegate Name', value: 'fulig'},
+    {icon: 'my_location', label: 'Address', value: baseConfig.fuligAddress}
   ];
 
   inTxItems: (Item & { link: string })[]  = [];
@@ -40,6 +41,18 @@ export default class FuligComponent extends Vue {
       label: 'Votes',
       value: new BigNumber(delegate.vote).div(Math.pow(10, 8)).trunc().toString()
     });
+    this.fuligItems.push({
+      icon : 'assessment',
+      label: 'approval',
+      value: `${delegate.approval}%`
+    });
+
+    this.fuligItems.push({
+      icon : 'share',
+      label: 'Pool Share',
+      value: '75%'
+    });
+
 
 
     const [inTxs, outTxs] = await Promise.all([
@@ -60,7 +73,7 @@ export default class FuligComponent extends Vue {
 
     this.inTxItems = inTxs.transactions.map((tx, idx) => {
       return {
-        icon : 'input',
+        icon : 'trending_down',
         label: inTxsSenders[idx],
         value: new BigNumber(tx.amount).div(Math.pow(10, 8)).toFixed(2) + ' LSK',
         link : viewUtils.explorerTxLink(tx.id)
@@ -69,14 +82,12 @@ export default class FuligComponent extends Vue {
 
     this.outTxItems = outTxs.transactions.map((tx, idx) => {
       return {
-        icon : 'input',
+        icon : 'trending_up',
         label: outTxsRecipients[idx],
         value: new BigNumber(tx.amount).div(Math.pow(10, 8)).toFixed(2) + ' LSK',
         link : viewUtils.explorerTxLink(tx.id)
       }
     });
-    console.log(outTxsRecipients);
-    console.log(inTxsSenders);
 
   }
 

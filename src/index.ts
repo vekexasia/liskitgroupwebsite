@@ -27,12 +27,6 @@ Vue.filter('satoshiToString', (value:number|string) => {
     .div(Math.pow(10,8))
     .toFixed(8);
 });
-Vue['material'].registerTheme('default', {
-  primary: 'black',
-  accent: 'amber',
-  warn: 'red',
-  background: 'grey'
-});
 new Vue({
   el: '#app',
   router,

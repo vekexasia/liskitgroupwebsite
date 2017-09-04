@@ -5,6 +5,7 @@ import FuligComponent from './home/FuligComponent.vue';
 import EventsComponent from './home/EventsComponent.vue';
 import ProjectsComponent from './home/ProjectsComponent.vue';
 import ContributionsComponent from './home/ContributionsComponent.vue';
+import MembersComponent from './home/MembersComponent.vue';
 
 export {
   AppComponent,
@@ -13,5 +14,6 @@ export {
   FuligComponent,
   EventsComponent,
   ProjectsComponent,
+  MembersComponent,
   ContributionsComponent
 };

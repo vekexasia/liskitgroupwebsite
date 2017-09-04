@@ -6,6 +6,7 @@ import {
   WhatOrWhoComponent,
   FuligComponent,
   ProjectsComponent,
+  MembersComponent,
   ContributionsComponent
 } from '../components'
 
@@ -16,7 +17,8 @@ import {
     "v-fulig"        : FuligComponent,
     "v-events"       : EventsComponent,
     "v-projects"     : ProjectsComponent,
-    "v-contributions": ContributionsComponent
+    "v-contributions": ContributionsComponent,
+    "v-members"      : MembersComponent
   }
 })
 export default class IndexPage extends Vue {
