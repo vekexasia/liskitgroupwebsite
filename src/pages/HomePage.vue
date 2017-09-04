@@ -14,6 +14,7 @@
     </md-layout>
     <v-whatorwho></v-whatorwho>
     <v-fulig></v-fulig>
+    <v-events></v-events>
   </div>
 </template>
 <script lang="ts" src="./HomePage.ts"/>

@@ -3,20 +3,6 @@ base:
   nodeAddress: https://liskwallet.punkrock.me
   fuligAddress: 13861531827625059307L
 
-outtxs:
-  10581746785585012221:
-    description: Multisig test transaction
-  2529251274377150655:
-    description: Donation to Legambiente for the italian earthquake
-  5674541128610044518:
-    description: Refund to @anamix for the food expenses of the Turin meetup
-  14768722220815178480:
-    description: Donation for LSK community work
-  13633284209897505288:
-    description: Donation for LSK community work
-  16081508973847720328:
-    description: Donation for LSK community work
-
 members:
   - name: dakk
     img: dakk_icon.jpg
@@ -77,7 +63,7 @@ events:
     uri: https://www.facebook.com/events/501480519975730/
     date: 20 May 2017
     pdf: turin_20_05_17.pdf
-    ppt: turin_20_05_17.key
+    ppt: turin_20_05_17.keyhttps://github.com/dakk
   - type: Meetup
     title: Crypto & Blockchains Meetup
     location: Milan, MikaMai / LinkMe
