@@ -5,10 +5,12 @@
   "author": "Andrea Baccega <vekexasia@gmail.com>",
   "private": true,
   "scripts": {
+    "clean": "shx rm -rf build/",
     "dev": "cross-env NODE_ENV=development webpack-dev-server ",
     "dev-prod": "cross-env NODE_ENV=production webpack-dev-server --open",
     "build-test": "npm run clean; cross-env webpack --progress --hide-modules",
-    "build-prod": "npm run clean; cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build-prod": "npm run clean; cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "deploy-prod": "npm run build-prod; firebase deploy --only hosting,database --project lisk-italian-group"
   },
   "dependencies": {},
   "devDependencies": {

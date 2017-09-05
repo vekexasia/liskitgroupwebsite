@@ -9,9 +9,8 @@
       We aim at reporting news and releases about  those projects to the community.<br><br>
       With the multi-signature address <a :href="viewUtils.explorerDelegateLink(baseConfig.fuligAddress)"><i class="ng-binding">{{baseConfig.fuligAddress}}</i></a> we’re going to create an <strong>official fund</strong> named <strong>FULIG</strong> to support these projects.
       Each month LIG members (and all Liskers who want) will be free to donate a percentage of their forged Lisk to the fund. The FULIG will vote all most recent 101 donors.
-      <br><br>
-      The FULIG is also a 90% <b>pool</b>, check the dedicated page: <router-link to="pool">FULIG Pool page</router-link>.
     </p>
+    <p style="line-height:48px">The FULIG is also a 90% <b>pool</b>, check the dedicated page: <router-link to="pool"><md-button class="md-raised md-accent"><md-tooltip>Check out the fulig pool</md-tooltip>FULIG Pool</md-button></router-link>.</p>
   </section>
 </template>
 <script lang="ts" src="./WhatOrWhoComponent.ts"/>
