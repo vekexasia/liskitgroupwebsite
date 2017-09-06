@@ -63,7 +63,7 @@ events:
     uri: https://www.facebook.com/events/501480519975730/
     date: 20 May 2017
     pdf: turin_20_05_17.pdf
-    ppt: turin_20_05_17.keyhttps://github.com/dakk
+    ppt: turin_20_05_17.key
   - type: Meetup
     title: Crypto & Blockchains Meetup
     location: Milan, MikaMai / LinkMe

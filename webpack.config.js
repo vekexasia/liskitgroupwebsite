@@ -32,7 +32,8 @@ const basePlugins       = [
   new ProgressBarPlugin(),
   // new ExtractTextPlugin("styles.css"),
   new CopyWebpackPlugin([
-    { from: 'src/assets', to: 'assets' }
+    { from: 'src/assets', to: 'assets' },
+    { from: 'delegates.json', to: 'assets' }
   ])
 ]
 ;
@@ -58,6 +59,8 @@ const productionPlugins = [
   })
 ];
 fs.writeFileSync(`${__dirname}/config.json`, JSON.stringify(Object.assign({}, config, { priv: null }), null, 2));
+fs.writeFileSync(`${__dirname}/delegates.json`, JSON.stringify(config.members.map(m => m.name).concat('fulig'), null, 2));
+
 module.exports = createConfig([
   // This will use ./src/index.* based on extension resolution order
   entryPoint('./src'),

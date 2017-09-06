@@ -50,7 +50,7 @@ export default class FuligComponent extends Vue {
     this.fuligItems.push({
       icon : 'share',
       label: 'Pool Share',
-      value: '75%'
+      value: '90%'
     });
 
 
