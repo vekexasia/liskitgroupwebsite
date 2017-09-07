@@ -59,7 +59,11 @@ const productionPlugins = [
   })
 ];
 fs.writeFileSync(`${__dirname}/config.json`, JSON.stringify(Object.assign({}, config, { priv: null }), null, 2));
-fs.writeFileSync(`${__dirname}/delegates.json`, JSON.stringify(config.members.map(m => m.name).concat('fulig'), null, 2));
+fs.writeFileSync(`${__dirname}/delegates.json`, JSON.stringify({
+  delegates: config.members.map(m => m.name).concat('fulig'),
+  link: 'https://liskitalian.group',
+  label: 'LIG'
+}, null, 2));
 
 module.exports = createConfig([
   // This will use ./src/index.* based on extension resolution order
