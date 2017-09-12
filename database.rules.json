@@ -1,6 +1,12 @@
 {
   "rules": {
     ".read": "auth != null",
-    ".write": "auth != null"
+    ".write": "auth != null",
+    "faucetRequests": {
+      ".write": true
+    },
+    "faucetResults": {
+      ".read": true
+    }
   }
 }

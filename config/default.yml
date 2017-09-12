@@ -3,6 +3,11 @@ base:
   nodeAddress: https://liskwallet.punkrock.me
   fuligAddress: 13861531827625059307L
 
+faucet:
+  rewardAddress: 9588132635871464294L
+  delayBlocks: 241920 # 4 weeks.
+  minWalletAmount: 1000 # lsk
+  faucetReward: 1 # lsk
 members:
   - name: dakk
     img: dakk_icon.jpg
