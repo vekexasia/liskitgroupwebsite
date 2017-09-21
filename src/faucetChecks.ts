@@ -17,9 +17,17 @@ export class FaucetChecker {
     this.throwOrSatisify(await this.checkMembersVoted());
     this.throwOrSatisify(await this.checkCurBalance());
     this.throwOrSatisify(await this.checkLastReward());
-    this.throwOrSatisify(await this.checkLastPaymentWindowBalance());
+    // this.throwOrSatisify(await this.checkLastPaymentWindowBalance());
     this.throwOrSatisify(await this.checkIfUserUnvotedMembersWithinPeriod());
     return this.satisfiedConditionsMsgs;
+  }
+
+  async calculateRewardSatoshi(): Promise<BigNumber> {
+    const {account} = await this.api.accounts.getAccount(this.address);
+    const tenk = new BigNumber(10000).times(Math.pow(10,8));
+    return BigNumber.min(tenk, new BigNumber(account.balance))
+      .div(tenk)
+      .times(Math.pow(10,8));
   }
 
   private throwOrSatisify(res: { error: boolean, msg: string }) {
@@ -28,6 +36,18 @@ export class FaucetChecker {
     } else if (res.msg !== null) {
       this.satisfiedConditionsMsgs.push(res.msg);
     }
+  }
+
+  /**
+   * Checks if faucet had already distributed max amount per week.
+   * @returns {Promise<{error: boolean; msg: string}>}
+   */
+  private async checkFaucetMaxRewardsPerWeek(): Promise<{error: boolean, msg: string}> {
+    const oneWeekBlocks = Math.floor(86400*7/10);
+    const {height} = await this.api.blocks.getHeight();
+    // const {tra}  = await this.api.transactions.getList({limit: 1, orderBy: "height:asc", "and:fromHeight": height - oneWeekBlocks});
+    //TODO: continue here with new rise-ts.
+    return null;
   }
 
   /**
@@ -95,7 +115,7 @@ export class FaucetChecker {
     if (new BigNumber(balance).div(Math.pow(10, 8)).lt(faucet.minWalletAmount)) {
       return {
         error: true,
-        msg  : 'Your balance is too low'
+        msg  : `Your balance is too low you need at least ${faucet.minWalletAmount} LSK`
       };
     } else {
       return {
@@ -142,6 +162,7 @@ export class FaucetChecker {
 
   /**
    * Checks if the user went lower than 1000 lsk during last delayblocks
+   * TODO: Remove as its not used anymore
    */
   private async checkLastPaymentWindowBalance(): Promise<{ error: boolean, msg: string }> {
     const {balance}              = await this.api.accounts.getBalance(this.address);

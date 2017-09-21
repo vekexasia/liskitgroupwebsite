@@ -15,6 +15,7 @@ import * as firebase from 'firebase';
   }
 })
 export default class PoolPage extends Vue {
+  faucetConfig              = faucet;
   members                   = members;
   userAddress: string       = '';
   checking                  = false;

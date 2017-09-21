@@ -24,10 +24,10 @@
       <p>In order to ensure high quality service you'll need to:</p>
       <ul>
         <li>Vote for all 10 LIG delegates</li>
-        <li>Have at least 1000LSK in your address</li>
+        <li>Have at least {{faucetConfig.minWalletAmount}} LSK in your address</li>
       </ul>
       <p>
-        Every ~4 weeks you'll be able to receive 1 LSK if you maintained the requirements mentioned above for the whole period.</p>
+        Every ~4 weeks you'll be able to receive up to 1LSK if you maintained the requirements mentioned above for the whole period.</p>
       <p>Use the form below to check requirements and request a withdraw.</p>
       <md-divider></md-divider>
       <md-layout>
