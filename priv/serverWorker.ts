@@ -72,7 +72,7 @@ async function processLoop(w: LiskWallet) {
           msg: `Reward is on its way`,
           txID: tx.id
         });
-
+        await awaiter(4000);
         await ref.set(null);
       } catch (e) {
         console.error(`${address} failure ${e.message}`);
