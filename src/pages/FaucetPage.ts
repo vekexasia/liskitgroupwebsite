@@ -23,6 +23,8 @@ export default class PoolPage extends Vue {
   metRequirements: string[] = null;
   withdrawing: boolean      = null;
   withdrawRes: {err:boolean, msg: string, txID:string} = null;
+  calculatedReward: string = null;
+
   get validAddress() {
     return /^[0-9]{1,21}L$/.test(this.userAddress)
   }
@@ -41,6 +43,8 @@ export default class PoolPage extends Vue {
       return;
     }
     this.checking = false;
+
+    this.calculatedReward = await fchecks.calculateRewardSatoshi().then(bn => bn.div(Math.pow(10,8)).toString());
 
     this.withdrawing = true;
     const ref = firebase.database().ref('faucetRequests').push({

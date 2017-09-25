@@ -4,7 +4,7 @@ export type Faucet = {
   rewardAddress: string
   delayBlocks: number
   minWalletAmount: number
-  faucetReward: number
+  maxWeekReward: number
 }
 
 export type Base = {

@@ -1,4 +1,4 @@
-import { APIWrapper, TransactionType } from 'risejs';
+import {APIWrapper, Transaction, TransactionType} from 'risejs';
 import { faucet, members } from './models';
 import BigNumber from 'bignumber.js';
 
@@ -13,12 +13,13 @@ export class FaucetChecker {
     const {height} = await this.api.blocks.getHeight();
     this.curHeight = height;
 
-    this.throwOrSatisify(await this.checkRewardAddressBalance());
     this.throwOrSatisify(await this.checkMembersVoted());
-    this.throwOrSatisify(await this.checkCurBalance());
-    this.throwOrSatisify(await this.checkLastReward());
+    this.throwOrSatisify(await this.checkUserBalance());
+    this.throwOrSatisify(await this.checkLastUserReward());
     // this.throwOrSatisify(await this.checkLastPaymentWindowBalance());
     this.throwOrSatisify(await this.checkIfUserUnvotedMembersWithinPeriod());
+    this.throwOrSatisify(await this.checkFaucetMaxRewardsPerWeek());
+    this.throwOrSatisify(await this.checkFaucetBalance());
     return this.satisfiedConditionsMsgs;
   }
 
@@ -45,18 +46,43 @@ export class FaucetChecker {
   private async checkFaucetMaxRewardsPerWeek(): Promise<{error: boolean, msg: string}> {
     const oneWeekBlocks = Math.floor(86400*7/10);
     const {height} = await this.api.blocks.getHeight();
-    // const {tra}  = await this.api.transactions.getList({limit: 1, orderBy: "height:asc", "and:fromHeight": height - oneWeekBlocks});
-    //TODO: continue here with new rise-ts.
-    return null;
+    const allTransactions:Transaction<any>[] = [];
+    let startHeight = height - oneWeekBlocks;
+    let count = 1;
+    while (count > 0) {
+      const {transactions, count:c}  = await this.api.transactions.getList({limit: 1, "and:type": TransactionType.SEND, orderBy: "height:asc", "and:fromHeight": height - oneWeekBlocks});
+      count = c;
+      allTransactions.push.apply(allTransactions, transactions);
+      if (transactions.length > 0 ) {
+        startHeight = transactions[transactions.length-1].height
+      }
+    }
+
+    let totalAmount = allTransactions
+      .map(tx => new BigNumber(tx.amount))
+      .reduce((a,b) => a.plus(b));
+
+    if (totalAmount.div(Math.pow(10,8)).gt(faucet.maxWeekReward)) {
+      return {
+        error: true,
+        msg  : `Faucet balance already depleted for this week.`
+      }
+    }
+
+    return {
+      error: false,
+      msg: null
+    }
   }
 
   /**
    * Checks if faucet address has enough money.
    */
-  private async checkRewardAddressBalance(): Promise<{ error: boolean, msg: string }> {
+  private async checkFaucetBalance(): Promise<{ error: boolean, msg: string }> {
     const {balance} = await this.api.accounts.getBalance(faucet.rewardAddress);
     const {fee}     = await this.api.blocks.getFee();
-    if (new BigNumber(balance).minus(faucet.faucetReward * Math.pow(10, 8)).minus(fee).lt(0)) {
+    // check if there's at least 1 LSK there.
+    if (new BigNumber(balance).minus(Math.pow(10, 8)).minus(fee).lt(0)) {
       return {
         error: true,
         msg  : `Faucet balance is too low. Please contact one of the LIG members.`
@@ -110,7 +136,7 @@ export class FaucetChecker {
   /**
    * Checks if user has a valid balance that matches the reqs.
    */
-  private async checkCurBalance(): Promise<{ error: boolean, msg: string }> {
+  private async checkUserBalance(): Promise<{ error: boolean, msg: string }> {
     const {balance} = await this.api.accounts.getBalance(this.address);
     if (new BigNumber(balance).div(Math.pow(10, 8)).lt(faucet.minWalletAmount)) {
       return {
@@ -128,7 +154,7 @@ export class FaucetChecker {
   /**
    * Checks last transaction sent to user and if enough time is elapsed
    */
-  private async checkLastReward(): Promise<{ error: boolean, msg: string }> {
+  private async checkLastUserReward(): Promise<{ error: boolean, msg: string }> {
 
     const {transactions} = await this.api.transactions.getList({
       senderId         : faucet.rewardAddress,

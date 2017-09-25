@@ -53,7 +53,7 @@
         <span v-if="error"><md-icon>warning</md-icon> {{error}}</span>
       </div>
       <div v-if="withdrawing">
-        <p>Preparing your faucet reward</p>
+        <p>Preparing your faucet reward. You'll receive {{calculatedReward}} LSK</p>
         <md-progress md-indeterminate/>
       </div>
       <div v-else-if="withdrawRes">

@@ -5,9 +5,9 @@ base:
 
 faucet:
   rewardAddress: 9588132635871464294L
-  delayBlocks: 241920 # 4 weeks.
-  minWalletAmount: 5 # lsk
-  faucetReward: 1 # lsk
+  delayBlocks: 77760 # 9 giorni
+  minWalletAmount: 1 # lsk
+  maxWeekReward: 60 # lsk
 members:
   - name: dakk
     img: dakk_icon.jpg

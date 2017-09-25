@@ -52,8 +52,9 @@ async function processLoop(w: LiskWallet) {
       try {
         await checker.performChecks();
         // Se son qui tutto è andato bene
+        const amount = await checker.calculateRewardSatoshi();
         const tx = (new dposOffline.transactions.SendTx())
-          .set('amount', faucet.faucetReward * Math.pow(10, 8))
+          .set('amount', amount.toNumber())
           .set('fee', fee)
           .set('timestamp', moment.utc().diff(new Date(Date.UTC(2016, 4, 24, 17, 0, 0, 0)), 'seconds'))
           .set('recipientId', address)
