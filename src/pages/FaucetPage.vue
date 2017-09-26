@@ -1,22 +1,12 @@
 <template>
   <div class="main-content poolpage">
     <!-- header -->
-    <md-layout md-column>
-      <md-layout md-align="center" style="padding-top:64px">
-        <router-link to="/">
-          <md-tooltip md-direction="top">Visit homepage</md-tooltip>
-          <img src="../assets/img/logo.svg" class="logo"/>
-        </router-link>
-      </md-layout>
-      <!--<md-layout md-align="center" style="padding:32px;">-->
-      <!--<img src="../assets/img/pool_slides.jpg" class="pool"/>-->
-      <!--</md-layout>-->
-    </md-layout>
+    <img src="../assets/img/faucet.jpg" style="max-width: 40%; margin: 0px auto; display:block;"
+         alt="LIG faucet logo">
     <section>
       <h2>LIG's Faucet</h2>
       <md-divider></md-divider>
-      <img src="../assets/img/faucet.jpg" style="max-width: 40%; margin: 0px auto; display:block;"
-           alt="LIG faucet logo">
+
       <p><abbr title="Lisk Italian Group">LIG</abbr> members have decided to create a Faucet to get you real LISK.</p>
       <strong>How does it work?</strong>
       <p>Every 4 weeks you'll be able to claim 1 <span style="font-weight:300">LISK</span>
