@@ -55,6 +55,10 @@ members:
     img: vek_icon.jpg
     description: ''
     link: https://github.com/vekexasia
+  - name: hirish
+    img: hirish_icon.jpg
+    description: ''
+    link: https://github.com/hirishh
 
 events:
   - type: Event Talk
@@ -227,6 +231,22 @@ projects:
     license: MIT
     authors:
       - liskit
+  - name: lisk-listen
+    description: Realtime Lisk Transaction Visualizer - http://lisklisten.net
+    type: website
+    stage: production
+    repository: https://github.com/hirishh/lisk-listen
+    license: MIT
+    authors:
+      - hirish
+  - name: sapiensproject
+    description: A Decentralized Academic and Reputation Platform
+    type: software
+    stage: development
+    repository: http://sapiensproject.io
+    license: MIT
+    authors:
+      - hirish
 
 
 contributions:
