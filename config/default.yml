@@ -59,8 +59,15 @@ members:
     img: hirish_icon.jpg
     description: ''
     link: https://github.com/hirishh
-
+    
 events:
+  - type: Meetup
+    title: The DPOS King
+    location: Rome, LUISS ENLABS
+    uri: https://www.eventbrite.it/e/biglietti-meetup-aperitech-di-blockchain-roma-41416141795
+    date: 25 January 2018
+    pdf: rome_25_01_18.pdf
+    ppt: rome_25_01_18.pptx
   - type: Event Talk
     title: Chatbots! Telegram + Blockchain
     location: University of Politecnico - Turin

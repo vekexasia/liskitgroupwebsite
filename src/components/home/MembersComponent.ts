@@ -17,7 +17,7 @@ export default class MembersComponent extends Vue {
         name: 'fulig',
         description: '',
         link: '/',
-        img: 'logo.svg'
+        img: 'newlogo.png'
       });
     }
   }
