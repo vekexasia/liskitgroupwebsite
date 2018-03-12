@@ -2,10 +2,10 @@
   <div class="main-content poolpage">
     <!-- header -->
     <md-layout md-column>
-      <md-layout md-align="center" style="padding-top:64px">
+      <md-layout md-align="center">
         <router-link to="/">
           <md-tooltip md-direction="top">Visit homepage</md-tooltip>
-          <img src="../assets/img/logo.svg" class="logo"/>
+          <img src="../assets/img/newlogo.png" class="logo"/>
         </router-link>
       </md-layout>
       <!--<md-layout md-align="center" style="padding:32px;">-->
@@ -58,8 +58,8 @@
   .poolpage {
     padding-bottom: 96px;
     img.logo {
-      width: 108px;
-      height: 150px;
+      width: 350px;
+      height: 350px !important;
     }
   }
 </style>
