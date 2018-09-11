@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import { baseConfig, members } from '../../models';
+import { baseConfig } from '../../models';
 import { cachedAddressToUserName, cachedPubKeyToUserName, liskApi, viewUtils } from '../../utils';
 import BigNumber from 'bignumber.js';
 
@@ -22,8 +22,13 @@ export default class FuligComponent extends Vue {
   outTxItems: (Item & { link: string })[] = [];
 
   async mounted() {
-    const {account}  = await liskApi.accounts.getAccount(baseConfig.fuligAddress);
-    const {delegate} = await liskApi.delegates.getByPublicKey(account.publicKey);
+    const {data: accounts}  = await liskApi.accounts.get({address: baseConfig.fuligAddress});
+    const [account] = accounts;
+    const {data: delegates} = await liskApi.delegates.get({publicKey: accounts[0].publicKey});
+    const [delegate] = delegates;
+
+    console.log(accounts);
+    console.log(delegate);
     this.fuligItems.push({
       icon : 'attach_money',
       label: 'Balance',
@@ -33,7 +38,7 @@ export default class FuligComponent extends Vue {
     this.fuligItems.push({
       icon : 'show_chart',
       label: 'Rank',
-      value: delegate.rate
+      value: delegate.rank
     });
 
     this.fuligItems.push({
@@ -54,24 +59,23 @@ export default class FuligComponent extends Vue {
     });
 
 
-
     const [inTxs, outTxs] = await Promise.all([
-      liskApi.transactions.getList({
+      liskApi.transactions.get({
         recipientId: baseConfig.fuligAddress,
-        orderBy    : 'height:desc',
+        sort       : 'timestamp:desc',
         limit      : 7
-      }),
-      liskApi.transactions.getList({
+      }).then(({data}) => data),
+      liskApi.transactions.get({
         senderId: baseConfig.fuligAddress,
-        orderBy : 'height:desc',
+        sort    : 'timestamp:desc',
         limit   : 7
-      })
+      }).then(({data}) => data)
     ]);
 
-    const inTxsSenders     = await Promise.all(inTxs.transactions.map(async tx => cachedPubKeyToUserName(tx.senderPublicKey, tx.senderId)));
-    const outTxsRecipients = await Promise.all(outTxs.transactions.map(async tx => cachedAddressToUserName(tx.recipientId, tx.recipientId)));
+    const inTxsSenders     = await Promise.all(inTxs.map(async tx => cachedPubKeyToUserName(tx.senderPublicKey, tx.senderId)));
+    const outTxsRecipients = await Promise.all(outTxs.map(async tx => cachedAddressToUserName(tx.recipientId, tx.recipientId)));
 
-    this.inTxItems = inTxs.transactions.map((tx, idx) => {
+    this.inTxItems = inTxs.map((tx, idx) => {
       return {
         icon : 'trending_down',
         label: inTxsSenders[idx],
@@ -80,7 +84,7 @@ export default class FuligComponent extends Vue {
       }
     });
 
-    this.outTxItems = outTxs.transactions.map((tx, idx) => {
+    this.outTxItems = outTxs.map((tx, idx) => {
       return {
         icon : 'trending_up',
         label: outTxsRecipients[idx],

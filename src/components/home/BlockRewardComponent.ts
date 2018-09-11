@@ -30,10 +30,10 @@ export default class BlockRewardComponent extends Vue {
   nextMilestoneBlockTime: moment.Moment = null;
 
   async mounted() {
-    const {blocks} = await liskApi.blocks
-      .getBlocks({limit: 1, orderBy: 'height:desc'});
+    const {data: blocks} = await liskApi.blocks
+      .get({limit: 1, orderBy: 'height:desc'});
 
-    const {height, timestamp} = blocks[0];
+        const {height, timestamp} = blocks[0];
     const blockTimeDate       = moment.utc(epoch).add(timestamp, 'seconds');
 
     var curMilestoneIdx            = Math.floor((height - rewards.offset) / rewards.distance);

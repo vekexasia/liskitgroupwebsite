@@ -12,7 +12,9 @@
     "build-prod": "npm run clean; cross-env NODE_ENV=production webpack --progress --hide-modules",
     "deploy-prod": "npm run build-prod; firebase deploy --only hosting,database --project lisk-italian-group"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lisk-elements": "^1.0.0"
+  },
   "devDependencies": {
     "@types/config": "0.0.32",
     "@types/mocha": "^2.2.41",

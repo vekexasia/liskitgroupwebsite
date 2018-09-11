@@ -59,7 +59,7 @@ members:
     img: hirish_icon.jpg
     description: ''
     link: https://github.com/hirishh
-    
+
 events:
   - type: Meetup
     title: The DPOS King
@@ -257,6 +257,25 @@ projects:
 
 
 contributions:
+  - title: Liskish Nano Wallet
+    repository: hirishh/liskish-wallet
+    uri: https://github.com/hirishh/liskish-wallet
+    date: 3 September 2018
+    authors:
+      - hirish
+      - vekexasia
+  - title: Ledger TypeScript Lib
+    repository: vekexasia/dpos-ledger-api
+    uri: https://github.com/vekexasia/dpos-ledger-api
+    date: 1 June 2018
+    authors:
+      - vekexasia
+  - title: Ledger Nano Implementation
+    repository: vekexasia/ledger-dpos
+    uri: https://github.com/vekexasia/ledger-dpos
+    date: 30 March 2018
+    authors:
+      - vekexasia
   - title: Lisk db schema
     repository: gist/andreafspeziale
     uri: https://gist.github.com/andreafspeziale/088cfce3f7b3fa08c2fbcc4d89d80739
