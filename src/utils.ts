@@ -12,8 +12,8 @@ const delegateCache = {
 export async function cachedPubKeyToUserName(publicKey:string, dft:string) {
   if (isEmpty(delegateCache[publicKey])) {
     try {
-      const res = await liskApi.delegates.getByPublicKey(publicKey);
-      delegateCache[publicKey] = res.delegate.username;
+      const res = await liskApi.delegates.getList({publicKey} as any) as any;
+      delegateCache[publicKey] = res.data[0].username;
 
     } catch (e) {
       return dft;

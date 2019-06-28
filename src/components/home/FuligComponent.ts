@@ -70,10 +70,16 @@ export default class FuligComponent extends Vue {
       } as any).then((r: any) => r.data)
     ]);
 
-    const inTxsSenders     = await Promise.all(inTxs.transactions.map(async tx => cachedPubKeyToUserName(tx.senderPublicKey, tx.senderId)));
-    const outTxsRecipients = await Promise.all(outTxs.transactions.map(async tx => cachedAddressToUserName(tx.recipientId, tx.recipientId)));
+    console.log(inTxs);
+    console.log(outTxs);
 
-    this.inTxItems = inTxs.transactions.map((tx, idx) => {
+    const inTxsSenders     = await Promise.all(inTxs.map(async tx => cachedPubKeyToUserName(tx.senderPublicKey, tx.senderId)));
+    const outTxsRecipients = await Promise.all(outTxs.map(async tx => cachedAddressToUserName(tx.recipientId, tx.recipientId)));
+
+
+    console.log('banana');
+
+    this.inTxItems = inTxs.map((tx, idx) => {
       return {
         icon : 'trending_down',
         label: inTxsSenders[idx],
@@ -82,7 +88,7 @@ export default class FuligComponent extends Vue {
       }
     });
 
-    this.outTxItems = outTxs.transactions.map((tx, idx) => {
+    this.outTxItems = outTxs.map((tx, idx) => {
       return {
         icon : 'trending_up',
         label: outTxsRecipients[idx],
