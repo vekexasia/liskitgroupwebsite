@@ -1,6 +1,6 @@
 {
   "name": "liskit-website",
-  "description": "OXY Investor Panel",
+  "description": "Lisk It website",
   "version": "1.0.0",
   "author": "Andrea Baccega <vekexasia@gmail.com>",
   "private": true,
@@ -12,7 +12,9 @@
     "build-prod": "npm run clean; cross-env NODE_ENV=production webpack --progress --hide-modules",
     "deploy-prod": "npm run build-prod; firebase deploy --only hosting,database --project lisk-italian-group"
   },
-  "dependencies": {},
+  "dependencies": {
+    "dpos-offline": "^1.2.3"
+  },
   "devDependencies": {
     "@types/config": "0.0.32",
     "@types/mocha": "^2.2.41",
@@ -35,7 +37,7 @@
     "node-sass": "^4.5.0",
     "progress-bar-webpack-plugin": "^1.9.3",
     "promise-parallel-throttle": "^3.0.0",
-    "risejs": "^1.1.1",
+    "risejs": "^1.1.4",
     "sass-loader": "^6.0.6",
     "shx": "^0.2.2",
     "sinon": "^3.0.0",

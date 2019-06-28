@@ -30,8 +30,8 @@ export default class BlockRewardComponent extends Vue {
   nextMilestoneBlockTime: moment.Moment = null;
 
   async mounted() {
-    const {blocks} = await liskApi.blocks
-      .getBlocks({limit: 1, orderBy: 'height:desc'});
+    const {data: blocks} = await liskApi.blocks
+      .getBlocks({limit: 1, sort: 'height:desc'} as any) as any;
 
     const {height, timestamp} = blocks[0];
     const blockTimeDate       = moment.utc(epoch).add(timestamp, 'seconds');

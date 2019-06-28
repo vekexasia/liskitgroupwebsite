@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import { HomePage, PoolPage } from './pages/';
+import { HomePage, PoolPage, FaucetPage } from './pages/';
 import firebase from 'firebase';
 
 
@@ -22,6 +22,14 @@ const routes: RouteConfig[] = [
     props: true,
     meta: {
       title: 'FULIG - 90% Profit Sharing Pool from LIG'
+    }
+  },
+  {
+    path: '/faucet',
+    component: FaucetPage,
+    props: true,
+    meta: {
+      title: 'LIG\'s Faucet! - Get LISK for free'
     }
   },
   {path: '*', redirect: '/'}

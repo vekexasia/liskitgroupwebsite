@@ -75,7 +75,8 @@ module.exports = createConfig([
 
   // TypeScript loader options are specified in tsconfig.json
   ts({
-    appendTsSuffixTo: [/\.vue$/], compilerOptions: {
+    appendTsSuffixTo: [/\.vue$/],
+    compilerOptions: {
       rootDir: './src'
     }
   }),

@@ -1,8 +1,13 @@
 base:
   explorerLink: https://explorer.lisk.io
-  nodeAddress: https://liskwallet.punkrock.me
+  nodeAddress: https://liskworld.info
   fuligAddress: 13861531827625059307L
 
+faucet:
+  rewardAddress: 9588132635871464294L
+  delayBlocks: 77760 # 9 giorni
+  minWalletAmount: 1 # lsk
+  maxWeekReward: 60 # lsk
 members:
   - name: dakk
     img: dakk_icon.jpg

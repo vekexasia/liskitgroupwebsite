@@ -1,5 +1,12 @@
 import * as config from 'config';
 
+export type Faucet = {
+  rewardAddress: string
+  delayBlocks: number
+  minWalletAmount: number
+  maxWeekReward: number
+}
+
 export type Base = {
   explorerLink: string
   fuligAddress: string
@@ -50,6 +57,7 @@ export type OutTx = {
 }
 
 export const outTxs: OutTx[]        = config['outtxs'];
+export const faucet: Faucet         = config['faucet'];
 export const baseConfig: Base       = config['base'];
 export const members: Member[]      = config['members'];
 export const projects: Project[]    = config['projects'];
