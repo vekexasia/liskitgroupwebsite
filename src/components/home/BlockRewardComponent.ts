@@ -31,7 +31,7 @@ export default class BlockRewardComponent extends Vue {
 
   async mounted() {
     const {blocks} = await liskApi.blocks
-      .getBlocks({limit: 1, orderBy: 'height:desc'});
+      .getBlocks({limit: 1, sort: 'height:desc'} as any);
 
     const {height, timestamp} = blocks[0];
     const blockTimeDate       = moment.utc(epoch).add(timestamp, 'seconds');
