@@ -3,7 +3,8 @@ import Component from 'vue-class-component';
 import {
   MembersComponent,
 } from '../components'
-import {members} from '../models';
+import axios from 'axios';
+import {members, baseConfig} from '../models';
 import {liskApi} from '../utils';
 
 @Component({
@@ -31,25 +32,26 @@ export default class PoolPage extends Vue {
   async doCheck() {
     this.checking      = true;
     this.greyedMembers = [];
-    const memberVoters = await Promise.all(
-      members.map(m => liskApi.delegates.getByUsername(m.name)
-        .then(d => liskApi.delegates.getVoters(d.delegate.publicKey))
-        .then(({ accounts }) => accounts)
-      )
-    );
-    const membersVoted = memberVoters
-      .map(voters => voters
-        .some((v) => v.address === this.userAddress)
-      );
 
+    const res = await axios.get(`${baseConfig.nodeAddress}/api/votes/?address=${this.userAddress}&limit=101`);
     this.unvotedMembers = [];
     this.votedMembers   = [];
-    for (let i = 0; i < membersVoted.length; i++) {
-      if (membersVoted[i]) {
-        this.votedMembers.push(members[i].name);
-      } else {
-        this.greyedMembers.push(i);
-        this.unvotedMembers.push(members[i].name);
+
+    if (res.data.data) {
+      const votes = res.data.data.votes;
+      const memberUsernames = members.map((m) => m.name);
+      const votedMembers = votes.map((v) => v.username)
+        .filter((u) => memberUsernames.indexOf(u) !== -1);
+
+      for (let i=0; i< memberUsernames.length; i++) {
+        const member = memberUsernames[i];
+        if (votedMembers.indexOf(member) !== -1) {
+          this.votedMembers.push(member);
+        } else {
+          this.greyedMembers.push(i);
+          this.unvotedMembers.push(member);
+        }
+
       }
     }
     this.checking = false;
