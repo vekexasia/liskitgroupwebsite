@@ -21,7 +21,7 @@
     "@types/node": "^8.0.7",
     "@types/sinon": "^2.3.3",
     "@types/sprintf": "^0.1.0",
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "bignumber.js": "^4.0.2",
     "config": "^1.26.2",
     "copy-webpack-plugin": "^4.0.1",
