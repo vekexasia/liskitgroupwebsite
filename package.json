@@ -34,7 +34,7 @@
     "js-yaml": "^3.9.1",
     "mocha": "^3.5.0",
     "moment": "^2.18.1",
-    "node-sass": "^4.5.0",
+    "node-sass": "^7.0.0",
     "progress-bar-webpack-plugin": "^1.9.3",
     "promise-parallel-throttle": "^3.0.0",
     "risejs": "^1.1.4",
