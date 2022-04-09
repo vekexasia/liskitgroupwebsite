@@ -33,7 +33,7 @@
     "is-empty": "^1.2.0",
     "js-yaml": "^3.9.1",
     "mocha": "^3.5.0",
-    "moment": "^2.18.1",
+    "moment": "^2.29.2",
     "node-sass": "^4.5.0",
     "progress-bar-webpack-plugin": "^1.9.3",
     "promise-parallel-throttle": "^3.0.0",
